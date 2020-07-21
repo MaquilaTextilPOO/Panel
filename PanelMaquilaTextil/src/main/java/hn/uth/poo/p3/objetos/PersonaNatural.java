@@ -24,6 +24,10 @@ public class PersonaNatural extends Persona {
     private String Telefono;
     private String Profesion;
 
+    public PersonaNatural() {
+        super();
+    }
+
  
     
 

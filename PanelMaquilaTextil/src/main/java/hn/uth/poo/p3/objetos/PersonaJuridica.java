@@ -17,7 +17,7 @@ public class PersonaJuridica extends Persona {
     private String NombreComercial;
     private String Giro;
     private String DireccionComercial;
-    private String codCiudad;
+    private Ciudad Ciudad;
     private String Email;
     private String TelefonoPrincipal;
     private String RepresentanteL;
@@ -27,22 +27,35 @@ public class PersonaJuridica extends Persona {
         super();
         
     }
-    
-    
 
-    public PersonaJuridica(int RTN, String RazonSocial, String NombreComercial, String Giro, String DireccionComercial, String codCiudad, String Email, String TelefonoPrincipal, String RepresentanteL, String IDRepresentanteL, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
+
+
+    public PersonaJuridica(int RTN, String RazonSocial, String NombreComercial, String Giro, String DireccionComercial, Ciudad Ciudad, String Email, String TelefonoPrincipal, String RepresentanteL, String IDRepresentanteL, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
         super(CodPersona, TigoPersona, Nombre, FecCreacion);
         this.RTN = RTN;
         this.RazonSocial = RazonSocial;
         this.NombreComercial = NombreComercial;
         this.Giro = Giro;
         this.DireccionComercial = DireccionComercial;
-        this.codCiudad = codCiudad;
+        this.Ciudad = Ciudad;
         this.Email = Email;
         this.TelefonoPrincipal = TelefonoPrincipal;
         this.RepresentanteL = RepresentanteL;
         this.IDRepresentanteL = IDRepresentanteL;
     }
+    
+    
+
+    public Ciudad getCiudad() {
+        return Ciudad;
+    }
+
+    public void setCiudad(Ciudad Ciudad) {
+        this.Ciudad = Ciudad;
+    }
+    
+    
+
     
     
 
@@ -86,13 +99,7 @@ public class PersonaJuridica extends Persona {
         this.DireccionComercial = DireccionComercial;
     }
 
-    public String getCodCiudad() {
-        return codCiudad;
-    }
-
-    public void setCodCiudad(String codCiudad) {
-        this.codCiudad = codCiudad;
-    }
+  
 
     public String getEmail() {
         return Email;
