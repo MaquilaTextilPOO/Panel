@@ -13,15 +13,27 @@ import java.util.Date;
  */
 public class Clientes extends Persona {
     private int codCliente;
+    private int limCredito;
 
     public Clientes() {
         super();
     }
-    
 
-    public Clientes(int codCliente, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
+    public Clientes(int codCliente, int limCredito, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
         super(CodPersona, TigoPersona, Nombre, FecCreacion);
         this.codCliente = codCliente;
+        this.limCredito = limCredito;
+    }
+    
+
+  
+
+    public int getLimCredito() {
+        return limCredito;
+    }
+
+    public void setLimCredito(int limCredito) {
+        this.limCredito = limCredito;
     }
     
     
