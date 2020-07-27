@@ -12,8 +12,8 @@ package hn.uth.poo.p3.objetos;
 public class Inventarios  {
     private int CodInventario;
     private Productos Productos;
-    private int CantidadInicial;
-    private int CantidadExistencia;
+    private double CantidadInicial;
+    private double CantidadExistencia;
 
     public Inventarios() {
         super();
@@ -46,7 +46,7 @@ public class Inventarios  {
         this.Productos = Productos;
     }
 
-    public int getCantidadInicial() {
+    public double getCantidadInicial() {
         return CantidadInicial;
     }
 
@@ -54,7 +54,7 @@ public class Inventarios  {
         this.CantidadInicial = CantidadInicial;
     }
 
-    public int getCantidadExistencia() {
+    public double getCantidadExistencia() {
         return CantidadExistencia;
     }
 
