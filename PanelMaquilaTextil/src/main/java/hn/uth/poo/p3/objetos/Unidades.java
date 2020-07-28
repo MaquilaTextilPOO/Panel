@@ -19,9 +19,9 @@ public class Unidades  {
     
     
 
-    public Unidades(String unidad, String descripcion) {
-        this.Unidad = unidad;
-        this.Descripcion = descripcion;
+    public Unidades(String Unidad, String Descripcion) {
+        this.Unidad = Unidad;
+        this.Descripcion = Descripcion;
     }
     
     
