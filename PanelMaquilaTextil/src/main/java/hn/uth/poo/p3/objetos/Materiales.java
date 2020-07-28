@@ -10,5 +10,37 @@ package hn.uth.poo.p3.objetos;
  * @author maureen
  */
 public class Materiales {
+    private int codMateria;
+    private String DescMateria;
+
+    public Materiales() {
+        super();
+    }
+    
+    
+
+    public Materiales(int codMateria, String DescMateria) {
+        this.codMateria = codMateria;
+        this.DescMateria = DescMateria;
+    }
+    
+    
+
+    public int getCodMateria() {
+        return codMateria;
+    }
+
+    public void setCodMateria(int codMateria) {
+        this.codMateria = codMateria;
+    }
+
+    public String getDescMateria() {
+        return DescMateria;
+    }
+
+    public void setDescMateria(String DescMateria) {
+        this.DescMateria = DescMateria;
+    }
+    
     
 }
