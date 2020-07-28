@@ -10,8 +10,8 @@ package hn.uth.poo.p3.objetos;
  * @author maureen
  */
 public class Unidades  {
-    private String unidad;
-    private String descripcion;
+    private String Unidad;
+    private String Descripcion;
 
     public Unidades() {
         super();
@@ -20,26 +20,26 @@ public class Unidades  {
     
 
     public Unidades(String unidad, String descripcion) {
-        this.unidad = unidad;
-        this.descripcion = descripcion;
+        this.Unidad = unidad;
+        this.Descripcion = descripcion;
     }
     
     
 
     public String getUnidad() {
-        return unidad;
+        return Unidad;
     }
 
     public void setUnidad(String unidad) {
-        this.unidad = unidad;
+        this.Unidad = unidad;
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return Descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        this.Descripcion = descripcion;
     }
     
     

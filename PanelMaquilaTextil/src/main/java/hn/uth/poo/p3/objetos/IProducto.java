@@ -10,8 +10,6 @@ package hn.uth.poo.p3.objetos;
  * @author maureen
  */
 public interface IProducto {
-  double CalcularPrecioVenta();
-  
-    
+  double CalcularPrecioVenta();      
   
 }
