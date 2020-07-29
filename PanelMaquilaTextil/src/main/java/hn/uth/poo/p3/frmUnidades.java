@@ -66,14 +66,14 @@ public class frmUnidades extends javax.swing.JFrame {
                             .addComponent(lblUnidad))
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                            .addComponent(txtUnidad))
+                            .addComponent(txtUnidad, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addComponent(txtDescripcion))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnGuardar)
                         .addGap(50, 50, 50)
                         .addComponent(btnBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(btnEliminar)
                         .addGap(41, 41, 41))))
         );
@@ -93,7 +93,7 @@ public class frmUnidades extends javax.swing.JFrame {
                     .addComponent(btnGuardar)
                     .addComponent(btnBuscar)
                     .addComponent(btnEliminar))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         pack();
