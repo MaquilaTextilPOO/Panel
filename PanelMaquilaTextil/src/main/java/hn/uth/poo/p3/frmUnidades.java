@@ -37,6 +37,7 @@ public class frmUnidades extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Unidades");
 
         lblUnidad.setText("Unidad");
 
