@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hn.uth.poo.p3.objetos;
+package hn.uth.poo.p3.recursos.clases;
 
 import java.util.Date;
 
@@ -18,10 +18,12 @@ public class RepresentanteLegal extends PersonaJuridica {
         super();
     }
 
-    public RepresentanteLegal(boolean indRepresentante, int RTN, String RazonSocial, String NombreComercial, String Giro, String DireccionComercial, hn.uth.poo.p3.objetos.Ciudad Ciudad, String Email, String TelefonoPrincipal, String RepresentanteL, String IDRepresentanteL, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
+    public RepresentanteLegal(boolean indRepresentante, int RTN, String RazonSocial, String NombreComercial, String Giro, String DireccionComercial, hn.uth.poo.p3.recursos.clases.Ciudad Ciudad, String Email, String TelefonoPrincipal, String RepresentanteL, String IDRepresentanteL, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
         super(RTN, RazonSocial, NombreComercial, Giro, DireccionComercial, Ciudad, Email, TelefonoPrincipal, RepresentanteL, IDRepresentanteL, CodPersona, TigoPersona, Nombre, FecCreacion);
         this.indRepresentante = indRepresentante;
     }
+
+
     
         
     public boolean isIndRepresentante() {

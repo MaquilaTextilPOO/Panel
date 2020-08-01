@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hn.uth.poo.p3;
+package hn.uth.poo.p3.presentacion.gui;
 
 /**
  *
