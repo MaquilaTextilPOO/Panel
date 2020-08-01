@@ -16,14 +16,19 @@ import java.sql.SQLException;
 public class conexion {
     private static final String USUARIO="maquilaAdmin";
     private static final String CLAVE="admin123";
+    private static final String URL="jdbc:derby://localhost:1527/maquilaTextil;create=true";
     public static Connection ObtenerConexion(){
-        try {
-            String URL ="jdbc:derby://localhost:1527/maquilaTextil";
-            Connection cn=DriverManager.getConnection(URL,USUARIO,CLAVE);
+        Connection cn = null;
+        try {           
+            cn=DriverManager.getConnection(URL,USUARIO,CLAVE);
+            if (cn !=null) {
+                System.out.println("conexion exitosa");
+            }
+            
         } catch (SQLException e) {
             System.err.println("error en conexion DataBase"+ e.getMessage());
         }
-        return null;
+        return cn;
     }
     
     

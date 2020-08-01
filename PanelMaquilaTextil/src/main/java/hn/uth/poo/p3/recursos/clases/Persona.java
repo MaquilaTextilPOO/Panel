@@ -1,5 +1,5 @@
 
-package hn.uth.poo.p3.objetos;
+package hn.uth.poo.p3.recursos.clases;
 
 import java.util.Date;
 
