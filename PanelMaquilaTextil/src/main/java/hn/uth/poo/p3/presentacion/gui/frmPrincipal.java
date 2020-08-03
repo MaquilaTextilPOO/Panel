@@ -5,8 +5,11 @@
  */
 package hn.uth.poo.p3.presentacion.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 
 /**
  *
@@ -58,6 +61,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblSalir = new javax.swing.JLabel();
+        pnlContenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -68,6 +72,9 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlClientes.setBackground(new java.awt.Color(85, 65, 118));
         pnlClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlClientesMouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlClientesMousePressed(evt);
             }
@@ -226,6 +233,9 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlCiudad.setBackground(new java.awt.Color(64, 43, 100));
         pnlCiudad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlCiudadMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pnlCiudadMouseEntered(evt);
             }
@@ -301,6 +311,17 @@ public class frmPrincipal extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout pnlContenedorLayout = new javax.swing.GroupLayout(pnlContenedor);
+        pnlContenedor.setLayout(pnlContenedorLayout);
+        pnlContenedorLayout.setHorizontalGroup(
+            pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        pnlContenedorLayout.setVerticalGroup(
+            pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
         pnlPrincipal.setLayout(pnlPrincipalLayout);
         pnlPrincipalLayout.setHorizontalGroup(
@@ -312,7 +333,10 @@ public class frmPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblSalir)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlPrincipalLayout.setVerticalGroup(
             pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -321,8 +345,10 @@ public class frmPrincipal extends javax.swing.JFrame {
                 .addComponent(lblSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(474, Short.MAX_VALUE))
-            .addComponent(pnlSide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(pnlSide, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -381,10 +407,19 @@ public class frmPrincipal extends javax.swing.JFrame {
         setColor(pnlMateriales);
         resetColor(pnlProveedores);
         resetColor(pnlCiudad);
+        
+        pnlMaterial pMaterial = new pnlMaterial();
+        pMaterial.setSize(400,300);
+        pMaterial.setLocation(5, 5);
+        
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pMaterial, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
     }//GEN-LAST:event_pnlMaterialesMouseClicked
 
     private void pnlProveedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlProveedoresMouseEntered
-         resetColor(pnlClientes);
+        resetColor(pnlClientes);
         resetColor(pnlOrdenTrabajo);
         resetColor(pnlFichaTecnica);
         resetColor(pnlMateriales);
@@ -401,6 +436,30 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlProveedores);
         setColor(pnlCiudad);
     }//GEN-LAST:event_pnlCiudadMouseEntered
+
+    private void pnlCiudadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCiudadMouseClicked
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        setColor(pnlCiudad);
+        try {
+            frmCiudad Ciudad= new frmCiudad();
+            Ciudad.setLocationRelativeTo(null);
+            this.setVisible(false);
+            Ciudad.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e);
+        }
+    }//GEN-LAST:event_pnlCiudadMouseClicked
+
+    private void pnlClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlClientesMouseClicked
+        // TODO add your handling code here:
+    
+        
+        
+    }//GEN-LAST:event_pnlClientesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -452,6 +511,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblSalir;
     private javax.swing.JPanel pnlCiudad;
     private javax.swing.JPanel pnlClientes;
+    public static javax.swing.JPanel pnlContenedor;
     private javax.swing.JPanel pnlFichaTecnica;
     private javax.swing.JPanel pnlMateriales;
     private javax.swing.JPanel pnlOrdenTrabajo;
