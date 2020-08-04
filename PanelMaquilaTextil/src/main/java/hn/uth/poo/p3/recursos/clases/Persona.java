@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Persona {
     private int CodPersona;
-    private String TigoPersona;
+    private String TipoPersona;
     private String Nombre;
     private Date FecCreacion;
 
@@ -21,7 +21,7 @@ public class Persona {
 
     public Persona(int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
         this.CodPersona = CodPersona;
-        this.TigoPersona = TigoPersona;
+        this.TipoPersona = TigoPersona;
         this.Nombre = Nombre;
         this.FecCreacion = FecCreacion;
     }
@@ -36,12 +36,12 @@ public class Persona {
         this.CodPersona = CodPersona;
     }
 
-    public String getTigoPersona() {
-        return TigoPersona;
+    public String getTipoPersona() {
+        return TipoPersona;
     }
 
-    public void setTigoPersona(String TigoPersona) {
-        this.TigoPersona = TigoPersona;
+    public void setTipoPersona(String TipoPersona) {
+        this.TipoPersona = TipoPersona;
     }
 
     public String getNombre() {

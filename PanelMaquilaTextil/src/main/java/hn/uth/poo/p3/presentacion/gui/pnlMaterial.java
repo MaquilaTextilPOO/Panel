@@ -66,10 +66,16 @@ public class pnlMaterial extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
 
+        lblCodigo.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(48, 34, 84));
         lblCodigo.setText("Código:");
 
+        lblNombre.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(48, 34, 84));
         lblNombre.setText("Nombre:");
 
+        btnCrear.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        btnCrear.setForeground(new java.awt.Color(48, 34, 84));
         btnCrear.setText("Crear");
         btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +83,8 @@ public class pnlMaterial extends javax.swing.JPanel {
             }
         });
 
+        btnLeer.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        btnLeer.setForeground(new java.awt.Color(48, 34, 84));
         btnLeer.setText("Leer");
         btnLeer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,6 +92,8 @@ public class pnlMaterial extends javax.swing.JPanel {
             }
         });
 
+        tblDatos.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        tblDatos.setForeground(new java.awt.Color(48, 34, 84));
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -116,7 +126,7 @@ public class pnlMaterial extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCrear)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,7 +140,7 @@ public class pnlMaterial extends javax.swing.JPanel {
                             .addComponent(lblCodigo)
                             .addGap(18, 18, 18)
                             .addComponent(txtCodMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,8 +158,8 @@ public class pnlMaterial extends javax.swing.JPanel {
                     .addComponent(btnCrear)
                     .addComponent(btnLeer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(115, 115, 115))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164))
         );
     }// </editor-fold>//GEN-END:initComponents
 
