@@ -20,7 +20,9 @@ import java.util.List;
  * @author maureen
  */
 public class CiudadDatos {
+    
 
+    
     public static List<Ciudad> LeerCiudad() throws SQLException {
         List<Ciudad> ciudades = new ArrayList<Ciudad>();
         try {
