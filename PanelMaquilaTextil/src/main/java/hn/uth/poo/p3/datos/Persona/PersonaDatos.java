@@ -21,6 +21,31 @@ import java.util.List;
  * @author maureen
  */
 public class PersonaDatos {
+    
+        public static int secuenciaCodPersona() throws SQLException {
+        int cod = 0;
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            Statement st = cn.createStatement();
+            String sql = "SELECT MAX(CODPERSONA) FROM PERSONA";
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next()) {
+                cod = rs.getInt(1);
+                if (rs.wasNull()) {
+                    cod = 0;
+                }
+            }
+            rs.close();
+            cn.close();
+            cod = cod + 1;
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage());
+        }
+
+        return cod;
+    }
+    
     public static List<Persona> LeerPersona() throws SQLException, Exception{
         List<Persona> personas = new ArrayList<Persona>();
         try {
@@ -32,7 +57,8 @@ public class PersonaDatos {
                 Persona persona = new Persona();
                 persona.setCodigo(rs.getInt(1));
                 persona.setTipoPersona(rs.getString(2));
-                persona.setNombre(sql);
+                persona.setNombre(rs.getString(3));
+                persona.setFecCreacion(rs.getDate(4));
                 personas.add(persona);
             }
             rs.close();
@@ -48,10 +74,11 @@ public class PersonaDatos {
 
     public static String InsertarPersona(Persona persona) throws SQLException, Exception{
         try {
+            int cod = secuenciaCodPersona();
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO PERSONA VALUES(?,?,?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);
-            ps.setInt(1, persona.getCodigo());
+            ps.setInt(1, cod);
             ps.setString(2, persona.getTipoPersona());
             ps.setString(3, persona.getNombre());
             ps.setDate(4, (Date) persona.getFecCreacion());

@@ -10,21 +10,18 @@ package hn.uth.poo.p3.recursos.clases;
  * @author maureen
  */
 public class Materiales {
+
     private int codMateria;
     private String DescMateria;
 
     public Materiales() {
         super();
     }
-    
-    
 
     public Materiales(int codMateria, String DescMateria) {
         this.codMateria = codMateria;
         this.DescMateria = DescMateria;
     }
-    
-    
 
     public int getCodMateria() {
         return codMateria;
@@ -41,6 +38,5 @@ public class Materiales {
     public void setDescMateria(String DescMateria) {
         this.DescMateria = DescMateria;
     }
-    
-    
+
 }

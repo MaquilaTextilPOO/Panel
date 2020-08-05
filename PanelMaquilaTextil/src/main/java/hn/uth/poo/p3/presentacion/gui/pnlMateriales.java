@@ -5,10 +5,9 @@
  */
 package hn.uth.poo.p3.presentacion.gui;
 
-import hn.uth.poo.p3.negocio.Persona.PersonaNegocio;
-import hn.uth.poo.p3.recursos.clases.Persona;
+import hn.uth.poo.p3.negocio.materiales.MaterialesNegocio;
+import hn.uth.poo.p3.recursos.clases.Materiales;
 import java.awt.HeadlessException;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,30 +18,31 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author maureen
  */
-public class pnlPersona extends javax.swing.JPanel {
-
-    DefaultTableModel modelo;
+public class pnlMateriales extends javax.swing.JPanel {
 
     /**
-     * Creates new form frmPersona
+     * Creates new form pnlMateriales
      */
-    public pnlPersona() {
+    DefaultTableModel modelo;
+
+    public pnlMateriales() {
         initComponents();
         inicio();
         Leer();
+
     }
 
     private void inicio() {
-        txtCodPersona.setText("0");
+        txtCodMaterial.setText("0");
         modelo = (DefaultTableModel) tblDatos.getModel();
     }
 
     private void Leer() {
         try {
-            List<Persona> listaPersona = new PersonaNegocio().Leer();
+            List<Materiales> listaMateriales = new MaterialesNegocio().Leer();
             modelo.setRowCount(0);
-            for (Persona persona : listaPersona) {
-                Object[] registroLeido = {persona.getCodigo(), persona.getTipoPersona(), persona.getNombre(), persona.getFecCreacion().toString()};
+            for (Materiales materiale : listaMateriales) {
+                Object[] registroLeido = {materiale.getCodMateria(), materiale.getDescMateria()};
                 modelo.addRow(registroLeido);
 
             }
@@ -65,16 +65,14 @@ public class pnlPersona extends javax.swing.JPanel {
         lblTitulo = new javax.swing.JLabel();
         btnLeer = new javax.swing.JButton();
         lblCodigo = new javax.swing.JLabel();
-        txtCodPersona = new javax.swing.JTextField();
-        lblNomCiudad = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtCodMaterial = new javax.swing.JTextField();
+        lblDescMateriales = new javax.swing.JLabel();
+        txtDescMaterial = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
-        cbbTipoPersona = new javax.swing.JComboBox<>();
-        lblTipoPersona = new javax.swing.JLabel();
 
         btnActualizar.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(48, 34, 84));
@@ -87,7 +85,7 @@ public class pnlPersona extends javax.swing.JPanel {
 
         lblTitulo.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(48, 34, 84));
-        lblTitulo.setText("Mantenimiento Persona");
+        lblTitulo.setText("Mantenimiento Materiales");
 
         btnLeer.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         btnLeer.setForeground(new java.awt.Color(48, 34, 84));
@@ -102,11 +100,11 @@ public class pnlPersona extends javax.swing.JPanel {
         lblCodigo.setForeground(new java.awt.Color(48, 34, 84));
         lblCodigo.setText("Codigo:");
 
-        txtCodPersona.setEnabled(false);
+        txtCodMaterial.setEnabled(false);
 
-        lblNomCiudad.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
-        lblNomCiudad.setForeground(new java.awt.Color(48, 34, 84));
-        lblNomCiudad.setText("Nombre:");
+        lblDescMateriales.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        lblDescMateriales.setForeground(new java.awt.Color(48, 34, 84));
+        lblDescMateriales.setText("Nombre:");
 
         btnGuardar.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(48, 34, 84));
@@ -141,14 +139,14 @@ public class pnlPersona extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo", "Tipo Persona", "Nombre", "Fecha Creación"
+                "Codigo", "Nombre"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -166,70 +164,51 @@ public class pnlPersona extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblDatos);
 
-        cbbTipoPersona.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NATURAL", "JURIDICA" }));
-
-        lblTipoPersona.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
-        lblTipoPersona.setForeground(new java.awt.Color(48, 34, 84));
-        lblTipoPersona.setText("Tipo Persona:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(193, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnGuardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnActualizar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnEliminar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnLeer))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(13, 13, 13)
-                                        .addComponent(lblNomCiudad))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblCodigo)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(65, 65, 65)
-                                                .addComponent(txtCodPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(lblTipoPersona)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(cbbTipoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblDescMateriales)
+                                .addGap(152, 152, 152)
                                 .addComponent(btnBuscar))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(84, 84, 84))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo)
-                        .addGap(172, 172, 172))))
+                            .addComponent(lblCodigo)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGuardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnActualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLeer))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtDescMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(44, 44, 44)
+                            .addComponent(lblTitulo))
+                        .addComponent(txtCodMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(21, 21, 21)
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
-                    .addComponent(txtCodPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtCodMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbbTipoPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTipoPersona))
-                .addGap(2, 2, 2)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNomCiudad)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDescMateriales)
+                    .addComponent(txtDescMaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -238,20 +217,18 @@ public class pnlPersona extends javax.swing.JPanel {
                     .addComponent(btnActualizar)
                     .addComponent(btnLeer))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(150, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
         try {
-
-            Persona persona = new Persona();
-            persona.setCodigo(Integer.parseInt(txtCodPersona.getText()));
-            persona.setTipoPersona(cbbTipoPersona.getModel().getSelectedItem().toString());
-            persona.setNombre(txtNombre.getText());
-            new PersonaNegocio().Actualizar(persona);
+            Materiales material = new Materiales();
+            material.setCodMateria(Integer.parseInt(txtCodMaterial.getText()));
+            material.setDescMateria(txtDescMaterial.getText());
+            new MaterialesNegocio().Actualizar(material);
             JOptionPane.showMessageDialog(null, "Actualizado", "Exito", JOptionPane.INFORMATION_MESSAGE);
             Leer();
         } catch (HeadlessException | NumberFormatException e) {
@@ -269,31 +246,26 @@ public class pnlPersona extends javax.swing.JPanel {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         try {
-            Date objDate = new Date();
-            Persona persona = new Persona();
-            persona.setCodigo(Integer.parseInt(txtCodPersona.getText()) + 1);
-            persona.setTipoPersona(cbbTipoPersona.getModel().getSelectedItem().toString());
-            persona.setNombre(txtNombre.getText());
-            persona.setFecCreacion(objDate);
-
-            String respuesta = new PersonaNegocio().Insertar(persona);
+            Materiales materiales = new Materiales();
+            materiales.setCodMateria(Integer.parseInt(txtCodMaterial.getText()) + 1);
+            materiales.setDescMateria(txtDescMaterial.getText());
+            String respuesta = new MaterialesNegocio().Insertar(materiales);
             JOptionPane.showMessageDialog(null, "Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
             Leer();
         } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
         try {
-            Persona persona = new Persona();
-            persona.setCodigo(Integer.parseInt(txtCodPersona.getText()));
-            persona.setTipoPersona(cbbTipoPersona.getModel().getSelectedItem().toString());
-            persona.setNombre(txtNombre.getText());
-            new PersonaNegocio().Eliminar(persona);
+            Materiales materiales = new Materiales();
+            materiales.setCodMateria(Integer.parseInt(txtCodMaterial.getText()));
+            materiales.setDescMateria(txtDescMaterial.getText());
+            new MaterialesNegocio().Eliminar(materiales);
             JOptionPane.showMessageDialog(null, "Eliminado", "Exito", JOptionPane.INFORMATION_MESSAGE);
             Leer();
         } catch (HeadlessException | NumberFormatException e) {
@@ -306,12 +278,12 @@ public class pnlPersona extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         try {
-            Persona persona = new Persona();
-            persona.setCodigo(Integer.parseInt(txtCodPersona.getText()));
-            List<Persona> listaPersona = new PersonaNegocio().Buscar(persona);
+            Materiales materiales = new Materiales();
+            materiales.setDescMateria(txtDescMaterial.getText());
+            List<Materiales> listaMateriales = new MaterialesNegocio().Buscar(materiales);
             modelo.setRowCount(0);
-            for (Persona persona1 : listaPersona) {
-                Object[] registroLeido = {persona.getCodigo(), persona.getTipoPersona(), persona.getNombre(), persona.getFecCreacion().toString()};
+            for (Materiales materiales1 : listaMateriales) {
+                Object[] registroLeido = {materiales1.getCodMateria(), materiales1.getDescMateria()};
                 modelo.addRow(registroLeido);
             }
             tblDatos.setModel(modelo);
@@ -323,8 +295,8 @@ public class pnlPersona extends javax.swing.JPanel {
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         // TODO add your handling code here:atos
         int filaseleccionada = tblDatos.getSelectedRow();
-        txtCodPersona.setText(modelo.getValueAt(filaseleccionada, 0).toString());
-        txtNombre.setText(modelo.getValueAt(filaseleccionada, 1).toString());
+        txtCodMaterial.setText(modelo.getValueAt(filaseleccionada, 0).toString());
+        txtDescMaterial.setText(modelo.getValueAt(filaseleccionada, 1).toString());
     }//GEN-LAST:event_tblDatosMouseClicked
 
 
@@ -334,14 +306,12 @@ public class pnlPersona extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLeer;
-    private javax.swing.JComboBox<String> cbbTipoPersona;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCodigo;
-    private javax.swing.JLabel lblNomCiudad;
-    private javax.swing.JLabel lblTipoPersona;
+    private javax.swing.JLabel lblDescMateriales;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblDatos;
-    private javax.swing.JTextField txtCodPersona;
-    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtCodMaterial;
+    private javax.swing.JTextField txtDescMaterial;
     // End of variables declaration//GEN-END:variables
 }

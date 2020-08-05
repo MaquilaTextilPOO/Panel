@@ -1,4 +1,3 @@
-
 package hn.uth.poo.p3.recursos.clases;
 
 import java.util.Date;
@@ -8,16 +7,15 @@ import java.util.Date;
  * @author maureen
  */
 public class Persona {
+
     private int CodPersona;
     private String TipoPersona;
     private String Nombre;
     private Date FecCreacion;
 
     public Persona() {
+        super();
     }
-    
-    
-    
 
     public Persona(int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
         this.CodPersona = CodPersona;
@@ -25,8 +23,6 @@ public class Persona {
         this.Nombre = Nombre;
         this.FecCreacion = FecCreacion;
     }
-    
-    
 
     public int getCodigo() {
         return CodPersona;
@@ -59,6 +55,5 @@ public class Persona {
     public void setFecCreacion(Date FecCreacion) {
         this.FecCreacion = FecCreacion;
     }
-    
-    
+
 }

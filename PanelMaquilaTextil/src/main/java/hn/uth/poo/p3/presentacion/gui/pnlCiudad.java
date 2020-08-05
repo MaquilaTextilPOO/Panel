@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author maureen
  */
 public class pnlCiudad extends javax.swing.JPanel {
+
     DefaultTableModel modelo;
 
     /**
@@ -27,28 +28,26 @@ public class pnlCiudad extends javax.swing.JPanel {
         inicio();
         Leer();
     }
-    
-     private void inicio() {
-        
-        modelo=(DefaultTableModel) tblDatos.getModel();
+
+    private void inicio() {
+        txtCodCiudad.setText("0");
+        modelo = (DefaultTableModel) tblDatos.getModel();
     }
-    
-    private void Leer(){
+
+    private void Leer() {
         try {
             List<Ciudad> listaCiudad = new CiudadNegocio().Leer();
             modelo.setRowCount(0);
             for (Ciudad ciudade : listaCiudad) {
-             Object[] registroLeido ={ciudade.getCodCiudad(), ciudade.getNomCiudad()};
-             modelo.addRow(registroLeido);
-            
-           
+                Object[] registroLeido = {ciudade.getCodCiudad(), ciudade.getNomCiudad()};
+                modelo.addRow(registroLeido);
+
             }
             tblDatos.setModel(modelo);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -93,6 +92,8 @@ public class pnlCiudad extends javax.swing.JPanel {
         lblCodigo.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         lblCodigo.setForeground(new java.awt.Color(48, 34, 84));
         lblCodigo.setText("Codigo:");
+
+        txtCodCiudad.setEnabled(false);
 
         lblNomCiudad.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         lblNomCiudad.setForeground(new java.awt.Color(48, 34, 84));
@@ -164,28 +165,25 @@ public class pnlCiudad extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                        .addGap(13, 13, 13)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblNomCiudad)
                                 .addGap(152, 152, 152)
                                 .addComponent(btnBuscar))
                             .addComponent(lblCodigo)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(lblTitulo))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                            .addGap(90, 90, 90)
+                            .addGap(78, 78, 78)
                             .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addGap(78, 78, 78)
                             .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(btnGuardar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnActualizar)
@@ -193,17 +191,18 @@ public class pnlCiudad extends javax.swing.JPanel {
                         .addComponent(btnEliminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLeer))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                        .addGap(44, 44, 44)
+                        .addComponent(lblTitulo)))
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
                     .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -220,7 +219,7 @@ public class pnlCiudad extends javax.swing.JPanel {
                     .addComponent(btnLeer))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(68, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -247,7 +246,7 @@ public class pnlCiudad extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             Ciudad ciudad = new Ciudad();
-            ciudad.setCodCiudad(Integer.parseInt(txtCodCiudad.getText()));
+            ciudad.setCodCiudad(Integer.parseInt(txtCodCiudad.getText())+1);
             ciudad.setNomCiudad(txtNomCiudad.getText());
             String respuesta = new CiudadNegocio().Insertar(ciudad);
             JOptionPane.showMessageDialog(null, "Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -274,12 +273,12 @@ public class pnlCiudad extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         try {
-            Ciudad ciudad=new Ciudad();
+            Ciudad ciudad = new Ciudad();
             ciudad.setNomCiudad(txtNomCiudad.getText());
             List<Ciudad> listaCiudad = new CiudadNegocio().Buscar(ciudad);
             modelo.setRowCount(0);
             for (Ciudad ciudad1 : listaCiudad) {
-                Object[] registroLeido ={ciudad1.getCodCiudad(), ciudad1.getNomCiudad()};
+                Object[] registroLeido = {ciudad1.getCodCiudad(), ciudad1.getNomCiudad()};
                 modelo.addRow(registroLeido);
             }
             tblDatos.setModel(modelo);
@@ -290,9 +289,9 @@ public class pnlCiudad extends javax.swing.JPanel {
 
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         // TODO add your handling code here:atos
-        int filaseleccionada= tblDatos.getSelectedRow();
+        int filaseleccionada = tblDatos.getSelectedRow();
         txtCodCiudad.setText(modelo.getValueAt(filaseleccionada, 0).toString());
-        txtNomCiudad.setText(modelo.getValueAt(filaseleccionada, 1).toString() );
+        txtNomCiudad.setText(modelo.getValueAt(filaseleccionada, 1).toString());
 
     }//GEN-LAST:event_tblDatosMouseClicked
 
