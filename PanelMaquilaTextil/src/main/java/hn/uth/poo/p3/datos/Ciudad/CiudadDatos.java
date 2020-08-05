@@ -20,9 +20,32 @@ import java.util.List;
  * @author maureen
  */
 public class CiudadDatos {
-    
 
-    
+    public static int secuenciaCodCiudad() throws SQLException {
+        int cod = 0;
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            Statement st = cn.createStatement();
+            String sql = "SELECT MAX(CODCIUDAD) FROM CIUDAD";
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next()) {
+                cod = rs.getInt(1);
+                if (rs.wasNull()) {
+                    cod = 0;
+                }
+            }
+            rs.close();
+            cn.close();
+            cod = cod + 1;
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage());
+        }
+        
+        System.out.println("codigo " + cod);
+        return cod ;
+    }
+
     public static List<Ciudad> LeerCiudad() throws SQLException {
         List<Ciudad> ciudades = new ArrayList<Ciudad>();
         try {
@@ -49,10 +72,11 @@ public class CiudadDatos {
 
     public static String InsertarCiudad(Ciudad ciudad) throws SQLException {
         try {
+          int cod=  secuenciaCodCiudad();
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO CIUDAD VALUES(?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);
-            ps.setInt(1, ciudad.getCodCiudad());
+            ps.setInt(1, cod);
             ps.setString(2, ciudad.getNomCiudad());
             ps.execute();
             ps.close();
