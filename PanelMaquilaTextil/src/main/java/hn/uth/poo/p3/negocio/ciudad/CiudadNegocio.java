@@ -29,6 +29,7 @@ public class CiudadNegocio {
 
     public String Insertar(Ciudad ciudad) {
         String respuesta = "Error";
+        
         try {
             if (ciudad.getCodCiudad() <= 0) {
                 throw new Exception("Error Insertar Ciudad: El Codigo no debe de ser menor o igual a 0");

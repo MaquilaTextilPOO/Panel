@@ -10,7 +10,6 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
 /**
  *
  * @author maureen
@@ -57,6 +56,10 @@ public class frmPrincipal extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         pnlCiudad = new javax.swing.JPanel();
         lblCiudad = new javax.swing.JLabel();
+        pnlPersona = new javax.swing.JPanel();
+        lblPersona = new javax.swing.JLabel();
+        pnlNorma = new javax.swing.JPanel();
+        lblNorma = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -74,6 +77,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlClientesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlClientesMouseEntered(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlClientesMousePressed(evt);
@@ -110,6 +116,9 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlOrdenTrabajo.setBackground(new java.awt.Color(64, 43, 100));
         pnlOrdenTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlOrdenTrabajoMouseEntered(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlOrdenTrabajoMousePressed(evt);
             }
@@ -140,6 +149,9 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlFichaTecnica.setBackground(new java.awt.Color(64, 43, 100));
         pnlFichaTecnica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlFichaTecnicaMouseEntered(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlFichaTecnicaMousePressed(evt);
             }
@@ -172,6 +184,9 @@ public class frmPrincipal extends javax.swing.JFrame {
         pnlMateriales.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pnlMaterialesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlMaterialesMouseEntered(evt);
             }
         });
 
@@ -264,15 +279,81 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlSide.add(pnlCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 40));
 
+        pnlPersona.setBackground(new java.awt.Color(64, 43, 100));
+        pnlPersona.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlPersonaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlPersonaMouseEntered(evt);
+            }
+        });
+
+        lblPersona.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
+        lblPersona.setForeground(new java.awt.Color(255, 245, 245));
+        lblPersona.setText("Persona");
+
+        javax.swing.GroupLayout pnlPersonaLayout = new javax.swing.GroupLayout(pnlPersona);
+        pnlPersona.setLayout(pnlPersonaLayout);
+        pnlPersonaLayout.setHorizontalGroup(
+            pnlPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPersonaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        pnlPersonaLayout.setVerticalGroup(
+            pnlPersonaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPersonaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblPersona)
+                .addContainerGap())
+        );
+
+        pnlSide.add(pnlPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, -1, 40));
+
+        pnlNorma.setBackground(new java.awt.Color(64, 43, 100));
+        pnlNorma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlNormaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlNormaMouseEntered(evt);
+            }
+        });
+
+        lblNorma.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
+        lblNorma.setForeground(new java.awt.Color(255, 245, 245));
+        lblNorma.setText("Norma");
+
+        javax.swing.GroupLayout pnlNormaLayout = new javax.swing.GroupLayout(pnlNorma);
+        pnlNorma.setLayout(pnlNormaLayout);
+        pnlNormaLayout.setHorizontalGroup(
+            pnlNormaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlNormaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblNorma, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        pnlNormaLayout.setVerticalGroup(
+            pnlNormaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlNormaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblNorma)
+                .addContainerGap())
+        );
+
+        pnlSide.add(pnlNorma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 40));
+
         jPanel1.setBackground(new java.awt.Color(144, 4, 246));
 
         jLabel3.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 245, 245));
-        jLabel3.setText("Histórico de ___________________________");
+        jLabel3.setText("Usuario Administrador");
 
         jLabel4.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 245, 245));
-        jLabel4.setText("Administración/");
+        jLabel4.setText("Sistema Textil");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,7 +362,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(22, 22, 22)
@@ -361,7 +442,7 @@ public class frmPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
         pack();
@@ -374,30 +455,15 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void pnlClientesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlClientesMousePressed
         // TODO add your handling code here:
-        setColor(pnlClientes);
-        resetColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
-        resetColor(pnlMateriales);
-        resetColor(pnlProveedores);
-        resetColor(pnlCiudad);
+
     }//GEN-LAST:event_pnlClientesMousePressed
 
     private void pnlOrdenTrabajoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMousePressed
-        resetColor(pnlClientes);
-        setColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
-        resetColor(pnlMateriales);
-        resetColor(pnlProveedores);
-        resetColor(pnlCiudad);
+
     }//GEN-LAST:event_pnlOrdenTrabajoMousePressed
 
     private void pnlFichaTecnicaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMousePressed
-        resetColor(pnlClientes);
-        resetColor(pnlOrdenTrabajo);
-        setColor(pnlFichaTecnica);
-        resetColor(pnlMateriales);
-        resetColor(pnlProveedores);
-        resetColor(pnlCiudad);
+
     }//GEN-LAST:event_pnlFichaTecnicaMousePressed
 
     private void pnlMaterialesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMaterialesMouseClicked
@@ -407,11 +473,13 @@ public class frmPrincipal extends javax.swing.JFrame {
         setColor(pnlMateriales);
         resetColor(pnlProveedores);
         resetColor(pnlCiudad);
-        
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+
         pnlMaterial pMaterial = new pnlMaterial();
-        pMaterial.setSize(400,300);
+        pMaterial.setSize(400, 300);
         pMaterial.setLocation(5, 5);
-        
+
         pnlContenedor.removeAll();
         pnlContenedor.add(pMaterial, BorderLayout.CENTER);
         pnlContenedor.revalidate();
@@ -425,6 +493,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlMateriales);
         setColor(pnlProveedores);
         resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
     }//GEN-LAST:event_pnlProveedoresMouseEntered
 
     private void pnlCiudadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCiudadMouseEntered
@@ -435,6 +505,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlMateriales);
         resetColor(pnlProveedores);
         setColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
     }//GEN-LAST:event_pnlCiudadMouseEntered
 
     private void pnlCiudadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCiudadMouseClicked
@@ -444,22 +516,124 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlMateriales);
         resetColor(pnlProveedores);
         setColor(pnlCiudad);
-        try {
-            frmCiudad Ciudad= new frmCiudad();
-            Ciudad.setLocationRelativeTo(null);
-            this.setVisible(false);
-            Ciudad.setVisible(true);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, e);
-        }
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+       
+        pnlCiudad pCiudad= new pnlCiudad();
+        pCiudad.setSize(400, 300);
+        pCiudad.setLocation(5, 5);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pCiudad, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
     }//GEN-LAST:event_pnlCiudadMouseClicked
 
     private void pnlClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlClientesMouseClicked
-        // TODO add your handling code here:
-    
-        
-        
+
+        setColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+
+
     }//GEN-LAST:event_pnlClientesMouseClicked
+
+    private void pnlPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPersonaMouseClicked
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        setColor(pnlPersona);
+        resetColor(pnlNorma);
+
+        pnlPersona pPersona = new pnlPersona();
+        pPersona.setSize(400, 300);
+        pPersona.setLocation(5, 5);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pPersona, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
+
+
+    }//GEN-LAST:event_pnlPersonaMouseClicked
+
+    private void pnlPersonaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPersonaMouseEntered
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        setColor(pnlPersona);
+        resetColor(pnlNorma);
+    }//GEN-LAST:event_pnlPersonaMouseEntered
+
+    private void pnlClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlClientesMouseEntered
+        setColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+    }//GEN-LAST:event_pnlClientesMouseEntered
+
+    private void pnlOrdenTrabajoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseEntered
+        resetColor(pnlClientes);
+        setColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+    }//GEN-LAST:event_pnlOrdenTrabajoMouseEntered
+
+    private void pnlFichaTecnicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMouseEntered
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        setColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+    }//GEN-LAST:event_pnlFichaTecnicaMouseEntered
+
+    private void pnlMaterialesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMaterialesMouseEntered
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        setColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+    }//GEN-LAST:event_pnlMaterialesMouseEntered
+
+    private void pnlNormaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlNormaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlNormaMouseClicked
+
+    private void pnlNormaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlNormaMouseEntered
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        setColor(pnlNorma);
+    }//GEN-LAST:event_pnlNormaMouseEntered
 
     /**
      * @param args the command line arguments
@@ -506,7 +680,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblFichaTecnica;
     private javax.swing.JLabel lblMateriales;
+    private javax.swing.JLabel lblNorma;
     private javax.swing.JLabel lblOrdenTrabajo;
+    private javax.swing.JLabel lblPersona;
     private javax.swing.JLabel lblProveedores;
     private javax.swing.JLabel lblSalir;
     private javax.swing.JPanel pnlCiudad;
@@ -514,7 +690,9 @@ public class frmPrincipal extends javax.swing.JFrame {
     public static javax.swing.JPanel pnlContenedor;
     private javax.swing.JPanel pnlFichaTecnica;
     private javax.swing.JPanel pnlMateriales;
+    private javax.swing.JPanel pnlNorma;
     private javax.swing.JPanel pnlOrdenTrabajo;
+    private javax.swing.JPanel pnlPersona;
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JPanel pnlProveedores;
     private javax.swing.JPanel pnlSide;
