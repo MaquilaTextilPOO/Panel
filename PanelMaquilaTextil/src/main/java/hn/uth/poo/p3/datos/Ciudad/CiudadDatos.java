@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class CiudadDatos {
 
-    public static List<Ciudad> LeerCiudad() {
+    public static List<Ciudad> LeerCiudad() throws SQLException {
         List<Ciudad> ciudades = new ArrayList<Ciudad>();
         try {
             Connection cn = conexion.ObtenerConexion();
@@ -38,14 +38,14 @@ public class CiudadDatos {
             cn.close();
 
         } catch (SQLException e) {
-            System.err.println("error " + e.getMessage());
+            throw new SQLException(e.getMessage());
 
         }
         return ciudades;
 
     }
 
-    public static String InsertarCiudad(Ciudad ciudad) {
+    public static String InsertarCiudad(Ciudad ciudad) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO CIUDAD VALUES(?,?)";
@@ -57,13 +57,12 @@ public class CiudadDatos {
             cn.close();
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return "Error InsertarCiudad:" + e.getMessage();
+            throw new SQLException(e.getMessage());
         }
         return null;
     }
 
-    public static String ActualizarCiudad(Ciudad ciudad) {
+    public static String ActualizarCiudad(Ciudad ciudad) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
             String sql = "UPDATE CIUDAD SET NOMCIUDAD= ? WHERE CODCIUDAD=?";
@@ -75,13 +74,12 @@ public class CiudadDatos {
             cn.close();
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return "Error ActualizarCiudad:" + e.getMessage();
+            throw new SQLException(e.getMessage());
         }
         return null;
     }
 
-    public static String EliminarCiudad(Ciudad ciudad) {
+    public static String EliminarCiudad(Ciudad ciudad) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
             String sql = "DELETE FROM CIUDAD WHERE CODCIUDAD=?";
@@ -91,8 +89,7 @@ public class CiudadDatos {
             ps.close();
             cn.close();
         } catch (Exception e) {
-            e.printStackTrace();
-            return "Error: " + e.getMessage();
+            throw new SQLException(e.getMessage());
         }
         return null;
     }
