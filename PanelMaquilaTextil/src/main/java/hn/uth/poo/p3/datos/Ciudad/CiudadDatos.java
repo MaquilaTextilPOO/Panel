@@ -41,9 +41,8 @@ public class CiudadDatos {
         } catch (SQLException e) {
             throw new SQLException(e.getMessage());
         }
-        
-        System.out.println("codigo " + cod);
-        return cod ;
+
+        return cod;
     }
 
     public static List<Ciudad> LeerCiudad() throws SQLException {
@@ -72,7 +71,7 @@ public class CiudadDatos {
 
     public static String InsertarCiudad(Ciudad ciudad) throws SQLException {
         try {
-          int cod=  secuenciaCodCiudad();
+            int cod = secuenciaCodCiudad();
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO CIUDAD VALUES(?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);

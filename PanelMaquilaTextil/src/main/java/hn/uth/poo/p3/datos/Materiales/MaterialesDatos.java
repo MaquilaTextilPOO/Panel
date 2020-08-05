@@ -21,6 +21,31 @@ import java.util.List;
  */
 public class MaterialesDatos {
 
+    public static int secuenciaCodMaterial() throws SQLException {
+        int cod = 0;
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            Statement st = cn.createStatement();
+            String sql = "SELECT MAX(CODMATERIAL) FROM MATERIALES";
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next()) {
+                cod = rs.getInt(1);
+                if (rs.wasNull()) {
+                    cod = 0;
+                }
+            }
+            rs.close();
+            cn.close();
+            cod = cod + 1;
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage());
+        }
+
+        System.out.println("codigo " + cod);
+        return cod;
+    }
+
     public static List<Materiales> LeerMateriales() throws SQLException {
         List<Materiales> materiales = new ArrayList<>();
         try {
@@ -43,18 +68,19 @@ public class MaterialesDatos {
         }
         return materiales;
     }
-    
-      public static String InsertarMateriales(Materiales materiales) {
+
+    public static String InsertarMateriales(Materiales materiales) {
         try {
+            int cod = secuenciaCodMaterial();
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO MATERIALES VALUES(?,?)";
-            try (PreparedStatement ps = cn.prepareStatement(sql)) {
-                ps.setInt(1, materiales.getCodMateria());
+            try ( PreparedStatement ps = cn.prepareStatement(sql)) {
+                ps.setInt(1, cod);
                 ps.setString(2, materiales.getDescMateria());
                 ps.execute();
                 ps.close();
             }
-            
+
             cn.close();
 
         } catch (SQLException e) {
@@ -62,7 +88,71 @@ public class MaterialesDatos {
         }
         return null;
     }
-    
-    
+
+    public static String ActualizarMateriales(Materiales materiales) throws SQLException {
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            String sql = "UPDATE MATERIALES SET DESCMATERIAL= ? WHERE CODMATERIAL=?";
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setString(1, materiales.getDescMateria());
+            ps.setInt(2, materiales.getCodMateria());
+            ps.execute();
+            ps.close();
+            cn.close();
+
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage());
+        }
+        return null;
+    }
+
+    public static String EliminarMateriales(Materiales materiales) throws SQLException {
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            String sql = "DELETE FROM MATERIALES WHERE CODMATERIAL=?";
+            PreparedStatement ps = cn.prepareStatement(sql);
+            ps.setInt(1, materiales.getCodMateria());
+            ps.execute();
+            ps.close();
+            cn.close();
+        } catch (Exception e) {
+            throw new SQLException(e.getMessage());
+        }
+        return null;
+    }
+
+    public static List<Materiales> BuscarMateriales(Materiales material) throws SQLException, Exception {
+        List<Materiales> materiales = new ArrayList<Materiales>();
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            Statement st = cn.createStatement();
+            String sql = "SELECT CODMATERIAL,DESCMATERIAL FROM MATERIALES WHERE UPPER(DESCMATERIAL) LIKE ?";
+            PreparedStatement ps = cn.prepareStatement(sql);
+
+            ps.setString(1, "%" + material.getDescMateria().toUpperCase() + "%");
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                do {
+                    Materiales materialesObjeto = new Materiales();
+                    materialesObjeto.setCodMateria(1);
+                    materialesObjeto.setDescMateria(rs.getString(2));
+                    materiales.add(materialesObjeto);
+                } while (rs.next());
+
+            } else {
+                throw new Exception("No encontro coincidencia");
+
+            }
+            rs.close();
+            ps.close();
+            cn.close();
+
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage());
+
+        }
+        return materiales;
+
+    }
 
 }

@@ -16,76 +16,57 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace pref="143" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="193" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnActualizar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnLeer" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                                      <Component id="lblNomCiudad" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblCodigo" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                              <Component id="txtCodPersona" min="-2" pref="136" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Component id="txtNombre" min="-2" pref="134" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="lblTipoPersona" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbbTipoPersona" min="-2" pref="136" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblDescMateriales" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                               <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="lblCodigo" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnActualizar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnLeer" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane1" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="txtDescMaterial" alignment="1" min="-2" pref="134" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="txtCodMaterial" alignment="1" min="-2" pref="136" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtCodPersona" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCodMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cbbTipoPersona" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblTipoPersona" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblNomCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDescMateriales" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtDescMaterial" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -96,8 +77,8 @@
                   <Component id="btnLeer" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="114" max="-2" attributes="0"/>
-              <EmptySpace pref="50" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="90" max="-2" attributes="0"/>
+              <EmptySpace pref="150" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -125,7 +106,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="54" green="22" red="30" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Mantenimiento Persona"/>
+        <Property name="text" type="java.lang.String" value="Mantenimiento Materiales"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnLeer">
@@ -153,12 +134,12 @@
         <Property name="text" type="java.lang.String" value="Codigo:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtCodPersona">
+    <Component class="javax.swing.JTextField" name="txtCodMaterial">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblNomCiudad">
+    <Component class="javax.swing.JLabel" name="lblDescMateriales">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Inter" size="13" style="1"/>
@@ -169,7 +150,7 @@
         <Property name="text" type="java.lang.String" value="Nombre:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtNombre">
+    <Component class="javax.swing.JTextField" name="txtDescMaterial">
     </Component>
     <Component class="javax.swing.JButton" name="btnGuardar">
       <Properties>
@@ -226,11 +207,9 @@
               <Color blue="54" green="22" red="30" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
+              <Table columnCount="2" rowCount="0">
                 <Column editable="false" title="Codigo" type="java.lang.Integer"/>
-                <Column editable="false" title="Tipo Persona" type="java.lang.String"/>
                 <Column editable="false" title="Nombre" type="java.lang.String"/>
-                <Column editable="false" title="Fecha Creaci&#xf3;n" type="java.lang.String"/>
               </Table>
             </Property>
           </Properties>
@@ -240,29 +219,5 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="cbbTipoPersona">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
-            <StringItem index="0" value="NATURAL"/>
-            <StringItem index="1" value="JURIDICA"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblTipoPersona">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Inter" size="13" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="54" green="22" red="30" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Tipo Persona:"/>
-      </Properties>
-    </Component>
   </SubComponents>
 </Form>

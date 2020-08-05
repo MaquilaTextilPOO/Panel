@@ -5,7 +5,6 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import hn.uth.poo.p3.recursos.clases.Persona;
 import java.util.Date;
 
 /**
@@ -25,9 +24,7 @@ public class Clientes extends Persona {
         this.codCliente = codCliente;
         this.limCredito = limCredito;
     }
-    
-
-  
+      
 
     public int getLimCredito() {
         return limCredito;

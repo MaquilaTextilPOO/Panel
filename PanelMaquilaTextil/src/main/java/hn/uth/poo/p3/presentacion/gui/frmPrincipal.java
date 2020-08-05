@@ -475,7 +475,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlPersona);
         resetColor(pnlNorma);
 
-        pnlMaterial pMaterial = new pnlMaterial();
+        pnlMateriales pMaterial = new pnlMateriales();
         pMaterial.setSize(400, 300);
         pMaterial.setLocation(5, 5);
 
