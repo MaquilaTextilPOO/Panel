@@ -10,7 +10,7 @@ package hn.uth.poo.p3.recursos.clases;
  * @author maureen
  */
 public class Tintura {
-    private int codTintura;
+    private int CodTintura;
     private String DesTintura;
 
     public Tintura() {
@@ -19,19 +19,19 @@ public class Tintura {
     
     
 
-    public Tintura(int codTintura, String DesTintura) {
-        this.codTintura = codTintura;
+    public Tintura(int CodTintura, String DesTintura) {
+        this.CodTintura = CodTintura;
         this.DesTintura = DesTintura;
     }
     
     
 
     public int getCodTintura() {
-        return codTintura;
+        return CodTintura;
     }
 
-    public void setCodTintura(int codTintura) {
-        this.codTintura = codTintura;
+    public void setCodTintura(int CodTintura) {
+        this.CodTintura = CodTintura;
     }
 
     public String getDesTintura() {
