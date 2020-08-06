@@ -5,18 +5,28 @@
  */
 package hn.uth.poo.p3.datos.Proveedores;
 
+import hn.uth.poo.p3.datos.conexion.conexion;
+import hn.uth.poo.p3.recursos.clases.Proveedores;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author MARLON HERNANDEZ
  */
 public class ProveedoresDatos {
     
-    public static int secuenciaCodCiudad() throws SQLException {
+    public static int secuenciaCodProveedor() throws SQLException {
         int cod = 0;
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT MAX(CODCIUDAD) FROM CIUDAD";
+            String sql = "SELECT MAX(CODPROVEEDOR) FROM PROVEEDORES";
             ResultSet rs = st.executeQuery(sql);
 
             if (rs.next()) {
@@ -35,18 +45,18 @@ public class ProveedoresDatos {
         return cod;
     }
 
-    public static List<Ciudad> LeerCiudad() throws SQLException {
-        List<Ciudad> ciudades = new ArrayList<Ciudad>();
+    public static List<Proveedores> LeerProveedores() throws SQLException {
+        List<Proveedores> proveedores = new ArrayList<Proveedores>();
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT CODCIUDAD,NOMCIUDAD FROM CIUDAD";
+            String sql = "SELECT CODPROVEEDOR,NOMPROVEEDOR FROM PROVEEDORES";
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                Ciudad ciudad = new Ciudad();
-                ciudad.setCodCiudad(rs.getInt(1));
-                ciudad.setNomCiudad(rs.getString(2));
-                ciudades.add(ciudad);
+                Proveedores proveedor = new Proveedores();
+                proveedor.setCodProveedor(rs.getInt(1));
+                proveedor.setNomProveedor(rs.getString(2));
+                proveedores.add(proveedor);
             }
             rs.close();
             cn.close();
@@ -55,18 +65,18 @@ public class ProveedoresDatos {
             throw new SQLException(e.getMessage());
 
         }
-        return ciudades;
+        return proveedores;
 
     }
 
-    public static String InsertarCiudad(Ciudad ciudad) throws SQLException {
+    public static String InsertarProveedores(Proveedores proveedor) throws SQLException {
         try {
-            int cod = secuenciaCodCiudad();
+            int cod = secuenciaCodProveedor();
             Connection cn = conexion.ObtenerConexion();
-            String sql = "INSERT INTO CIUDAD VALUES(?,?)";
+            String sql = "INSERT INTO PROVEEDORES VALUES(?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);
             ps.setInt(1, cod);
-            ps.setString(2, ciudad.getNomCiudad());
+            ps.setString(2, proveedor.getNomProveedor());
             ps.execute();
             ps.close();
             cn.close();
@@ -77,13 +87,13 @@ public class ProveedoresDatos {
         return null;
     }
 
-    public static String ActualizarCiudad(Ciudad ciudad) throws SQLException {
+    public static String ActualizarProveedores(Proveedores proveedor) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
-            String sql = "UPDATE CIUDAD SET NOMCIUDAD= ? WHERE CODCIUDAD=?";
+            String sql = "UPDATE PROVEEDORES SET NOMPROVEEDOR= ? WHERE CODPROVEEDOR=?";
             PreparedStatement ps = cn.prepareStatement(sql);
-            ps.setString(1, ciudad.getNomCiudad());
-            ps.setInt(2, ciudad.getCodCiudad());
+            ps.setString(1, proveedor.getNomProveedor());
+            ps.setInt(2, proveedor.getCodProveedor());
             ps.execute();
             ps.close();
             cn.close();
@@ -94,12 +104,12 @@ public class ProveedoresDatos {
         return null;
     }
 
-    public static String EliminarCiudad(Ciudad ciudad) throws SQLException {
+    public static String EliminarProveedores(Proveedores proveedor) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
-            String sql = "DELETE FROM CIUDAD WHERE CODCIUDAD=?";
+            String sql = "DELETE FROM PROVEEDORES WHERE CODPROVEEDOR=?";
             PreparedStatement ps = cn.prepareStatement(sql);
-            ps.setInt(1, ciudad.getCodCiudad());
+            ps.setInt(1, proveedor.getCodProveedor());
             ps.execute();
             ps.close();
             cn.close();
@@ -109,22 +119,22 @@ public class ProveedoresDatos {
         return null;
     }
 
-    public static List<Ciudad> BuscarCiudad(Ciudad Ciudad) throws SQLException, Exception {
-        List<Ciudad> ciudades = new ArrayList<Ciudad>();
+    public static List<Proveedores> BuscarProveedores(Proveedores proveedor) throws SQLException, Exception {
+        List<Proveedores> proveedores = new ArrayList<Proveedores>();
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT CODCIUDAD,NOMCIUDAD FROM CIUDAD WHERE UPPER(NOMCIUDAD) LIKE ?";
+            String sql = "SELECT CODPROVEEDOR,NOMPROVEEDOR FROM PROVEEDORES WHERE UPPER(NOMPROVEEDOR) LIKE ?";
             PreparedStatement ps = cn.prepareStatement(sql);
 
-            ps.setString(1, "%" + Ciudad.getNomCiudad().toUpperCase() + "%");
+            ps.setString(1, "%" + proveedor.getNomProveedor().toUpperCase() + "%");
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 do {
-                    Ciudad ciudadObjeto = new Ciudad();
-                    ciudadObjeto.setCodCiudad(1);
-                    ciudadObjeto.setNomCiudad(rs.getString(2));
-                    ciudades.add(ciudadObjeto);
+                    Proveedores proveedorObjeto = new Proveedores();
+                    proveedorObjeto.setCodProveedor(1);
+                    proveedorObjeto.setNomProveedor(rs.getString(2));
+                    proveedores.add(proveedorObjeto);
                 } while (rs.next());
 
             } else {
@@ -139,7 +149,7 @@ public class ProveedoresDatos {
             throw new SQLException(e.getMessage());
 
         }
-        return ciudades;
+        return proveedores;
 
     }
 }

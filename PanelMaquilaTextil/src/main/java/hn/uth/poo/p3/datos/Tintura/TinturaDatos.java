@@ -71,6 +71,7 @@ public class TinturaDatos {
 
     public static String InsertarTintura(Tintura tintura) throws SQLException {
         try {
+            int cod = secuenciaCodTintura();
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO TINTURA VALUES(?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);
