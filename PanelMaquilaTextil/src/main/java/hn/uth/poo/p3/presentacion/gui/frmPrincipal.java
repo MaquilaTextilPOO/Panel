@@ -677,6 +677,24 @@ public class frmPrincipal extends javax.swing.JFrame {
 
     private void pnlTinturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseClicked
         // TODO add your handling code here:
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        setColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+        setColor(pnlTintura);
+       
+        pnlTintura pTintura= new pnlTintura();
+        pTintura.setSize(400, 300);
+        pTintura.setLocation(5, 5);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pTintura, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
     }//GEN-LAST:event_pnlTinturaMouseClicked
 
     private void pnlTinturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseEntered
