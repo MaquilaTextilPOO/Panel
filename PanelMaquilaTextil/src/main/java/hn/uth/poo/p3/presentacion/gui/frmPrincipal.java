@@ -59,6 +59,8 @@ public class frmPrincipal extends javax.swing.JFrame {
         lblPersona = new javax.swing.JLabel();
         pnlNorma = new javax.swing.JPanel();
         lblNorma = new javax.swing.JLabel();
+        pnlTintura = new javax.swing.JPanel();
+        lblTintura = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -344,6 +346,39 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlSide.add(pnlNorma, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 40));
 
+        pnlTintura.setBackground(new java.awt.Color(64, 43, 100));
+        pnlTintura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlTinturaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlTinturaMouseEntered(evt);
+            }
+        });
+
+        lblTintura.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
+        lblTintura.setForeground(new java.awt.Color(255, 245, 245));
+        lblTintura.setText("Tintura");
+
+        javax.swing.GroupLayout pnlTinturaLayout = new javax.swing.GroupLayout(pnlTintura);
+        pnlTintura.setLayout(pnlTinturaLayout);
+        pnlTinturaLayout.setHorizontalGroup(
+            pnlTinturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTinturaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblTintura, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        pnlTinturaLayout.setVerticalGroup(
+            pnlTinturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTinturaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTintura)
+                .addContainerGap())
+        );
+
+        pnlSide.add(pnlTintura, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, -1, 40));
+
         jPanel1.setBackground(new java.awt.Color(144, 4, 246));
 
         jLabel3.setFont(new java.awt.Font("Inter", 1, 18)); // NOI18N
@@ -573,6 +608,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlCiudad);
         setColor(pnlPersona);
         resetColor(pnlNorma);
+        resetColor(pnlTintura);
     }//GEN-LAST:event_pnlPersonaMouseEntered
 
     private void pnlClientesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlClientesMouseEntered
@@ -584,6 +620,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlCiudad);
         resetColor(pnlPersona);
         resetColor(pnlNorma);
+        resetColor(pnlTintura);
     }//GEN-LAST:event_pnlClientesMouseEntered
 
     private void pnlOrdenTrabajoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseEntered
@@ -595,6 +632,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlCiudad);
         resetColor(pnlPersona);
         resetColor(pnlNorma);
+        resetColor(pnlTintura);
     }//GEN-LAST:event_pnlOrdenTrabajoMouseEntered
 
     private void pnlFichaTecnicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMouseEntered
@@ -606,6 +644,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlCiudad);
         resetColor(pnlPersona);
         resetColor(pnlNorma);
+        resetColor(pnlTintura);
     }//GEN-LAST:event_pnlFichaTecnicaMouseEntered
 
     private void pnlMaterialesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMaterialesMouseEntered
@@ -617,6 +656,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlCiudad);
         resetColor(pnlPersona);
         resetColor(pnlNorma);
+        resetColor(pnlTintura);
     }//GEN-LAST:event_pnlMaterialesMouseEntered
 
     private void pnlNormaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlNormaMouseClicked
@@ -632,7 +672,24 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlCiudad);
         resetColor(pnlPersona);
         setColor(pnlNorma);
+        resetColor(pnlTintura);
     }//GEN-LAST:event_pnlNormaMouseEntered
+
+    private void pnlTinturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlTinturaMouseClicked
+
+    private void pnlTinturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseEntered
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+        setColor(pnlTintura);
+    }//GEN-LAST:event_pnlTinturaMouseEntered
 
     /**
      * @param args the command line arguments
@@ -684,6 +741,7 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lblPersona;
     private javax.swing.JLabel lblProveedores;
     private javax.swing.JLabel lblSalir;
+    private javax.swing.JLabel lblTintura;
     private javax.swing.JPanel pnlCiudad;
     private javax.swing.JPanel pnlClientes;
     public static javax.swing.JPanel pnlContenedor;
@@ -695,5 +753,6 @@ public class frmPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel pnlPrincipal;
     private javax.swing.JPanel pnlProveedores;
     private javax.swing.JPanel pnlSide;
+    private javax.swing.JPanel pnlTintura;
     // End of variables declaration//GEN-END:variables
 }
