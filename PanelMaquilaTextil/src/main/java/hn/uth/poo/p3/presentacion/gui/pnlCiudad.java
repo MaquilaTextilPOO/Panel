@@ -71,18 +71,24 @@ public class pnlCiudad extends javax.swing.JPanel {
         tblDatos = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
 
-        btnActualizar.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        btnActualizar.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(48, 34, 84));
+        btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-actualizar-16.png"))); // NOI18N
         btnActualizar.setText("Actualizar");
+        btnActualizar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnActualizar.setBorderPainted(false);
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
             }
         });
 
-        btnLeer.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        btnLeer.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         btnLeer.setForeground(new java.awt.Color(48, 34, 84));
+        btnLeer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-lectura-16.png"))); // NOI18N
         btnLeer.setText("Leer");
+        btnLeer.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnLeer.setBorderPainted(false);
         btnLeer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLeerActionPerformed(evt);
@@ -93,39 +99,55 @@ public class pnlCiudad extends javax.swing.JPanel {
         lblCodigo.setForeground(new java.awt.Color(48, 34, 84));
         lblCodigo.setText("Codigo:");
 
+        txtCodCiudad.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         txtCodCiudad.setEnabled(false);
 
         lblNomCiudad.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         lblNomCiudad.setForeground(new java.awt.Color(48, 34, 84));
         lblNomCiudad.setText("Nombre:");
 
-        btnGuardar.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        txtNomCiudad.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        btnGuardar.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         btnGuardar.setForeground(new java.awt.Color(48, 34, 84));
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-guardar-16.png"))); // NOI18N
         btnGuardar.setText("Crear");
+        btnGuardar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnGuardar.setBorderPainted(false);
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarActionPerformed(evt);
             }
         });
 
-        btnEliminar.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(48, 34, 84));
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-eliminar-16.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
+        btnEliminar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnEliminar.setBorderPainted(false);
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
 
-        btnBuscar.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        btnBuscar.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(48, 34, 84));
+        btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-búsqueda-16.png"))); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnBuscar.setBorderPainted(false);
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
 
+        jScrollPane1.setAutoscrolls(true);
+        jScrollPane1.setOpaque(false);
+
+        tblDatos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tblDatos.setForeground(new java.awt.Color(48, 34, 84));
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -150,6 +172,8 @@ public class pnlCiudad extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblDatos.setCellSelectionEnabled(true);
+        tblDatos.setGridColor(new java.awt.Color(179, 179, 179));
         tblDatos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tblDatosMouseClicked(evt);
@@ -157,52 +181,54 @@ public class pnlCiudad extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblDatos);
 
-        lblTitulo.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(48, 34, 84));
-        lblTitulo.setText("Mantenimiento Ciudad");
+        lblTitulo.setText("Configuración Ciudad");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNomCiudad)
-                                .addGap(152, 152, 152)
-                                .addComponent(btnBuscar))
-                            .addComponent(lblCodigo)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(78, 78, 78)
-                            .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(78, 78, 78)
-                            .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lblCodigo)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNomCiudad)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(67, 67, 67)
+                                        .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnBuscar))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnGuardar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnActualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEliminar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLeer))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(75, 75, 75)
                         .addComponent(lblTitulo)))
-                .addGap(79, 79, 79))
+                .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addComponent(lblTitulo)
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
                     .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -210,16 +236,16 @@ public class pnlCiudad extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNomCiudad)
                     .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
                     .addComponent(btnGuardar)
                     .addComponent(btnActualizar)
                     .addComponent(btnLeer))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
