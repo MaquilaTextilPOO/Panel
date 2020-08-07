@@ -216,6 +216,9 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         pnlProveedores.setBackground(new java.awt.Color(64, 43, 100));
         pnlProveedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlProveedoresMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pnlProveedoresMouseEntered(evt);
             }
@@ -682,7 +685,7 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlFichaTecnica);
         resetColor(pnlMateriales);
         resetColor(pnlProveedores);
-        setColor(pnlCiudad);
+        resetColor(pnlCiudad);
         resetColor(pnlPersona);
         resetColor(pnlNorma);
         setColor(pnlTintura);
@@ -708,6 +711,26 @@ public class frmPrincipal extends javax.swing.JFrame {
         resetColor(pnlNorma);
         setColor(pnlTintura);
     }//GEN-LAST:event_pnlTinturaMouseEntered
+
+    private void pnlProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlProveedoresMouseClicked
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        setColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        resetColor(pnlNorma);
+       
+        pnlProveedores pProveedores= new pnlProveedores();
+        pProveedores.setSize(400, 300);
+        pProveedores.setLocation(5, 5);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pProveedores, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
+    }//GEN-LAST:event_pnlProveedoresMouseClicked
 
     /**
      * @param args the command line arguments
