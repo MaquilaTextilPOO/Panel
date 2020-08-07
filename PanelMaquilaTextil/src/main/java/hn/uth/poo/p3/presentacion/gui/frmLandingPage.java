@@ -26,6 +26,14 @@ public class frmLandingPage extends javax.swing.JFrame {
     /**
      * Creates new form Home20
      */
+    void setColor(JPanel panel) {
+        panel.setBackground(new Color(85, 65, 118));
+    }
+
+    void resetColor(JPanel panel) {
+        panel.setBackground(new Color(64, 43, 100));
+    }
+
     public frmLandingPage() {
         initComponents();
         frmLandingPage.this.getRootPane().setBorder(new LineBorder(new Color(76, 41, 211)));
@@ -37,10 +45,10 @@ public class frmLandingPage extends javax.swing.JFrame {
         if (OSUtils.getOSType() == OSUtils.OSType.MacOS) {
             pnlTop.remove(pnlTitle);
             pnlTop.remove(pnlRight);
-            
+
             pnlTop.add(pnlTitle, BorderLayout.EAST);
             pnlTop.add(pnlActions, BorderLayout.WEST);
-            
+
             pnlActions.remove(lblClose);
             pnlActions.remove(lblMaximize);
             pnlActions.remove(lblMinimize);
@@ -48,19 +56,19 @@ public class frmLandingPage extends javax.swing.JFrame {
             pnlActions.add(lblClose);
             pnlActions.add(lblMaximize);
             pnlActions.add(lblMinimize);
-            
+
             pnlTitle.remove(lblTitle);
             pnlTitle.setLayout(new FlowLayout(FlowLayout.RIGHT, 10, 8));
-            pnlTitle.add(lblTitle);      
-            
-        }        
-           if (OSUtils.getOSType() == OSUtils.OSType.Windows) {
+            pnlTitle.add(lblTitle);
+
+        }
+        if (OSUtils.getOSType() == OSUtils.OSType.Windows) {
             pnlTop.remove(pnlTitle);
             pnlTop.remove(pnlRight);
-            
+
             pnlTop.add(pnlTitle, BorderLayout.WEST);
             pnlTop.add(pnlActions, BorderLayout.EAST);
-            
+
             pnlActions.remove(lblClose);
             pnlActions.remove(lblMaximize);
             pnlActions.remove(lblMinimize);
@@ -68,11 +76,11 @@ public class frmLandingPage extends javax.swing.JFrame {
             pnlActions.add(lblMinimize);
             pnlActions.add(lblMaximize);
             pnlActions.add(lblClose);
-            
+
             pnlTitle.remove(lblTitle);
             pnlTitle.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 8));
-            pnlTitle.add(lblTitle);      
-            
+            pnlTitle.add(lblTitle);
+
         }
     }
 
@@ -101,23 +109,19 @@ public class frmLandingPage extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         lblOS = new javax.swing.JLabel();
         sidepane = new javax.swing.JPanel();
-        btn_typo = new javax.swing.JPanel();
-        ind_typo = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        btn_fonts = new javax.swing.JPanel();
-        ind_fonts = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        btn_icons = new javax.swing.JPanel();
-        ind_icons = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        btn_btns = new javax.swing.JPanel();
-        ind_btns = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        btn_data = new javax.swing.JPanel();
-        ind_data = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
+        pnlTintura = new javax.swing.JPanel();
+        lblTintura = new javax.swing.JLabel();
+        pnlCiudad = new javax.swing.JPanel();
+        lblCiudad = new javax.swing.JLabel();
+        pnlFichaTecnica = new javax.swing.JPanel();
+        lblFichaTecnica = new javax.swing.JLabel();
+        pnlOrdenTrabajo = new javax.swing.JPanel();
+        lblOrdenTrabajo = new javax.swing.JLabel();
+        pnlMateriales = new javax.swing.JPanel();
+        lblMateriales = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         pnlHeader = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         pnlContenedor = new javax.swing.JPanel();
@@ -208,9 +212,9 @@ public class frmLandingPage extends javax.swing.JFrame {
         lblUser.setForeground(new java.awt.Color(204, 204, 204));
         lblUser.setText("USER");
 
-        lblOS.setFont(new java.awt.Font("Century Gothic", 0, 10)); // NOI18N
+        lblOS.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         lblOS.setForeground(new java.awt.Color(204, 204, 204));
-        lblOS.setText("Interface guidelines");
+        lblOS.setText("Interface");
 
         sidepane.setBackground(new java.awt.Color(54, 33, 89));
         sidepane.setPreferredSize(new java.awt.Dimension(250, 200));
@@ -225,168 +229,178 @@ public class frmLandingPage extends javax.swing.JFrame {
             }
         });
 
-        btn_typo.setBackground(new java.awt.Color(76, 41, 211));
-        btn_typo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_typoMousePressed(evt);
-            }
-        });
-        btn_typo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ind_typo.setOpaque(false);
-        ind_typo.setPreferredSize(new java.awt.Dimension(4, 40));
-
-        javax.swing.GroupLayout ind_typoLayout = new javax.swing.GroupLayout(ind_typo);
-        ind_typo.setLayout(ind_typoLayout);
-        ind_typoLayout.setHorizontalGroup(
-            ind_typoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
-        );
-        ind_typoLayout.setVerticalGroup(
-            ind_typoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        btn_typo.add(ind_typo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
-
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel12.setText("Typography");
-        btn_typo.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
-
-        btn_fonts.setBackground(new java.awt.Color(76, 41, 211));
-        btn_fonts.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_fontsMousePressed(evt);
-            }
-        });
-        btn_fonts.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ind_fonts.setOpaque(false);
-        ind_fonts.setPreferredSize(new java.awt.Dimension(4, 40));
-
-        javax.swing.GroupLayout ind_fontsLayout = new javax.swing.GroupLayout(ind_fonts);
-        ind_fonts.setLayout(ind_fontsLayout);
-        ind_fontsLayout.setHorizontalGroup(
-            ind_fontsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
-        );
-        ind_fontsLayout.setVerticalGroup(
-            ind_fontsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        btn_fonts.add(ind_fonts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
-
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("Fonts");
-        btn_fonts.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
-
-        btn_icons.setBackground(new java.awt.Color(76, 41, 211));
-        btn_icons.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_iconsMousePressed(evt);
-            }
-        });
-        btn_icons.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        ind_icons.setOpaque(false);
-        ind_icons.setPreferredSize(new java.awt.Dimension(4, 40));
-
-        javax.swing.GroupLayout ind_iconsLayout = new javax.swing.GroupLayout(ind_icons);
-        ind_icons.setLayout(ind_iconsLayout);
-        ind_iconsLayout.setHorizontalGroup(
-            ind_iconsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
-        );
-        ind_iconsLayout.setVerticalGroup(
-            ind_iconsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        btn_icons.add(ind_icons, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
-
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Icons");
-        btn_icons.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
-
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setText("STYLES");
+        jLabel7.setText("TRANSACCIONES");
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("COMPONENTS");
+        jLabel8.setText("CONFIGURACIÓN");
 
-        btn_btns.setBackground(new java.awt.Color(76, 41, 211));
-        btn_btns.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_btnsMousePressed(evt);
+        pnlTintura.setBackground(new java.awt.Color(64, 43, 100));
+        pnlTintura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlTinturaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlTinturaMouseEntered(evt);
             }
         });
-        btn_btns.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ind_btns.setOpaque(false);
-        ind_btns.setPreferredSize(new java.awt.Dimension(4, 40));
+        lblTintura.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        lblTintura.setForeground(new java.awt.Color(255, 245, 245));
+        lblTintura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-paleta-de-pintura-16.png"))); // NOI18N
+        lblTintura.setText("Tintura");
 
-        javax.swing.GroupLayout ind_btnsLayout = new javax.swing.GroupLayout(ind_btns);
-        ind_btns.setLayout(ind_btnsLayout);
-        ind_btnsLayout.setHorizontalGroup(
-            ind_btnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
+        javax.swing.GroupLayout pnlTinturaLayout = new javax.swing.GroupLayout(pnlTintura);
+        pnlTintura.setLayout(pnlTinturaLayout);
+        pnlTinturaLayout.setHorizontalGroup(
+            pnlTinturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTinturaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblTintura, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        ind_btnsLayout.setVerticalGroup(
-            ind_btnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+        pnlTinturaLayout.setVerticalGroup(
+            pnlTinturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTinturaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTintura)
+                .addContainerGap())
         );
 
-        btn_btns.add(ind_btns, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
-
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel9.setText("Buttons");
-        btn_btns.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
-
-        btn_data.setBackground(new java.awt.Color(76, 41, 211));
-        btn_data.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btn_dataMousePressed(evt);
+        pnlCiudad.setBackground(new java.awt.Color(64, 43, 100));
+        pnlCiudad.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlCiudadMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlCiudadMouseEntered(evt);
             }
         });
-        btn_data.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ind_data.setOpaque(false);
-        ind_data.setPreferredSize(new java.awt.Dimension(4, 40));
+        lblCiudad.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        lblCiudad.setForeground(new java.awt.Color(255, 245, 245));
+        lblCiudad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-ciudad-50.png"))); // NOI18N
+        lblCiudad.setText("Ciudad");
 
-        javax.swing.GroupLayout ind_dataLayout = new javax.swing.GroupLayout(ind_data);
-        ind_data.setLayout(ind_dataLayout);
-        ind_dataLayout.setHorizontalGroup(
-            ind_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
+        javax.swing.GroupLayout pnlCiudadLayout = new javax.swing.GroupLayout(pnlCiudad);
+        pnlCiudad.setLayout(pnlCiudadLayout);
+        pnlCiudadLayout.setHorizontalGroup(
+            pnlCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCiudadLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        ind_dataLayout.setVerticalGroup(
-            ind_dataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+        pnlCiudadLayout.setVerticalGroup(
+            pnlCiudadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCiudadLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblCiudad)
+                .addContainerGap())
         );
 
-        btn_data.add(ind_data, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 40));
+        pnlFichaTecnica.setBackground(new java.awt.Color(64, 43, 100));
+        pnlFichaTecnica.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlFichaTecnicaMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlFichaTecnicaMouseEntered(evt);
+            }
+        });
 
-        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("Datacards");
-        btn_data.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, -1, -1));
+        lblFichaTecnica.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        lblFichaTecnica.setForeground(new java.awt.Color(255, 245, 245));
+        lblFichaTecnica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-bola-winder-16.png"))); // NOI18N
+        lblFichaTecnica.setText("Ficha Técnica");
+
+        javax.swing.GroupLayout pnlFichaTecnicaLayout = new javax.swing.GroupLayout(pnlFichaTecnica);
+        pnlFichaTecnica.setLayout(pnlFichaTecnicaLayout);
+        pnlFichaTecnicaLayout.setHorizontalGroup(
+            pnlFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFichaTecnicaLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblFichaTecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlFichaTecnicaLayout.setVerticalGroup(
+            pnlFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFichaTecnicaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblFichaTecnica)
+                .addContainerGap())
+        );
+
+        pnlOrdenTrabajo.setBackground(new java.awt.Color(64, 43, 100));
+        pnlOrdenTrabajo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlOrdenTrabajoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlOrdenTrabajoMouseEntered(evt);
+            }
+        });
+
+        lblOrdenTrabajo.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        lblOrdenTrabajo.setForeground(new java.awt.Color(255, 245, 245));
+        lblOrdenTrabajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-calendario-16.png"))); // NOI18N
+        lblOrdenTrabajo.setText("Orden Trabajo");
+
+        javax.swing.GroupLayout pnlOrdenTrabajoLayout = new javax.swing.GroupLayout(pnlOrdenTrabajo);
+        pnlOrdenTrabajo.setLayout(pnlOrdenTrabajoLayout);
+        pnlOrdenTrabajoLayout.setHorizontalGroup(
+            pnlOrdenTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlOrdenTrabajoLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblOrdenTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlOrdenTrabajoLayout.setVerticalGroup(
+            pnlOrdenTrabajoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOrdenTrabajoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblOrdenTrabajo)
+                .addContainerGap())
+        );
+
+        pnlMateriales.setBackground(new java.awt.Color(64, 43, 100));
+        pnlMateriales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pnlMaterialesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlMaterialesMouseEntered(evt);
+            }
+        });
+
+        lblMateriales.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        lblMateriales.setForeground(new java.awt.Color(255, 245, 245));
+        lblMateriales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-botón-16.png"))); // NOI18N
+        lblMateriales.setText("Materiales");
+
+        javax.swing.GroupLayout pnlMaterialesLayout = new javax.swing.GroupLayout(pnlMateriales);
+        pnlMateriales.setLayout(pnlMaterialesLayout);
+        pnlMaterialesLayout.setHorizontalGroup(
+            pnlMaterialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMaterialesLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(lblMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlMaterialesLayout.setVerticalGroup(
+            pnlMaterialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMaterialesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblMateriales)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout sidepaneLayout = new javax.swing.GroupLayout(sidepane);
         sidepane.setLayout(sidepaneLayout);
         sidepaneLayout.setHorizontalGroup(
             sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_typo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_fonts, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_icons, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_btns, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btn_data, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(sidepaneLayout.createSequentialGroup()
                 .addGroup(sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(sidepaneLayout.createSequentialGroup()
@@ -395,7 +409,12 @@ public class frmLandingPage extends javax.swing.JFrame {
                     .addGroup(sidepaneLayout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(jLabel7)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(pnlTintura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlFichaTecnica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlOrdenTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlMateriales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         sidepaneLayout.setVerticalGroup(
             sidepaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,18 +422,18 @@ public class frmLandingPage extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_typo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlFichaTecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_fonts, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_icons, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                .addComponent(pnlOrdenTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_btns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addComponent(pnlCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlTintura, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(215, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlAdminLayout = new javax.swing.GroupLayout(pnlAdmin);
@@ -427,23 +446,34 @@ public class frmLandingPage extends javax.swing.JFrame {
                 .addGroup(pnlAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUser)
                     .addComponent(lblVersion)
-                    .addComponent(lblOS))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(sidepane, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addGroup(pnlAdminLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(lblOS))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(sidepane, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
         );
         pnlAdminLayout.setVerticalGroup(
             pnlAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAdminLayout.createSequentialGroup()
                 .addGroup(pnlAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblIcon)
                     .addGroup(pnlAdminLayout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addComponent(lblUser)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblVersion)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblOS)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAdminLayout.createSequentialGroup()
+                                .addComponent(lblVersion)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(pnlAdminLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblOS)
+                                .addGap(12, 12, 12)))
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12))
+                    .addGroup(pnlAdminLayout.createSequentialGroup()
+                        .addComponent(lblIcon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(sidepane, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -455,7 +485,7 @@ public class frmLandingPage extends javax.swing.JFrame {
         pnlContenedor.setLayout(pnlContenedorLayout);
         pnlContenedorLayout.setHorizontalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 754, Short.MAX_VALUE)
+            .addGap(0, 859, Short.MAX_VALUE)
         );
         pnlContenedorLayout.setVerticalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,11 +497,12 @@ public class frmLandingPage extends javax.swing.JFrame {
         pnlHeaderLayout.setHorizontalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHeaderLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(pnlHeaderLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(pnlContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlHeaderLayout.setVerticalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,94 +588,75 @@ public class frmLandingPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sidepaneMouseDragged
 
-    private void btn_dataMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dataMousePressed
+    private void pnlTinturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseClicked
         // TODO add your handling code here:
-        setColor(btn_data);
-        resetColor(btn_typo);
-        resetColor(btn_btns);
-        resetColor(btn_fonts);
-        resetColor(btn_icons);
+    }//GEN-LAST:event_pnlTinturaMouseClicked
 
-        ind_typo.setOpaque(false);
-        ind_btns.setOpaque(false);
-        ind_data.setOpaque(true);
-        ind_fonts.setOpaque(false);
-        ind_icons.setOpaque(false);
+    private void pnlTinturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseEntered
 
-        cardLayout.show(pnlRight, "card1");
-    }//GEN-LAST:event_btn_dataMousePressed
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlCiudad);
+        setColor(pnlTintura);
+    }//GEN-LAST:event_pnlTinturaMouseEntered
 
-    private void btn_btnsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_btnsMousePressed
-        // TODO add your handling code here:
-        setColor(btn_btns);
-        resetColor(btn_data);
-        resetColor(btn_typo);
-        resetColor(btn_fonts);
-        resetColor(btn_icons);
+    private void pnlCiudadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCiudadMouseClicked
 
-        ind_typo.setOpaque(false);
-        ind_btns.setOpaque(true);
-        ind_data.setOpaque(false);
-        ind_fonts.setOpaque(false);
-        ind_icons.setOpaque(false);
-    }//GEN-LAST:event_btn_btnsMousePressed
+        setColor(pnlCiudad);
 
-    private void btn_iconsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_iconsMousePressed
-        // TODO add your handling code here:
-        setColor(btn_icons);
-        resetColor(btn_data);
-        resetColor(btn_btns);
-        resetColor(btn_fonts);
-        resetColor(btn_typo);
+        pnlCiudad pCiudad = new pnlCiudad();
+        pCiudad.setSize(400, 300);
+        pCiudad.setLocation(200, 15);
 
-        ind_typo.setOpaque(false);
-        ind_btns.setOpaque(false);
-        ind_data.setOpaque(false);
-        ind_fonts.setOpaque(false);
-        ind_icons.setOpaque(true);
-    }//GEN-LAST:event_btn_iconsMousePressed
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pCiudad, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
+    }//GEN-LAST:event_pnlCiudadMouseClicked
 
-    private void btn_fontsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_fontsMousePressed
-        // TODO add your handling code here:
-        setColor(btn_fonts);
-        resetColor(btn_data);
-        resetColor(btn_btns);
-        resetColor(btn_typo);
-        resetColor(btn_icons);
-
-        //indicators
-        ind_typo.setOpaque(false);
-        ind_btns.setOpaque(false);
-        ind_data.setOpaque(false);
-        ind_fonts.setOpaque(true);
-        ind_icons.setOpaque(false);
-    }//GEN-LAST:event_btn_fontsMousePressed
-
-    private void btn_typoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_typoMousePressed
+    private void pnlCiudadMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCiudadMouseEntered
         // TODO add your handling code here:
 
-        setColor(btn_typo);
-        resetColor(btn_data);
-        resetColor(btn_btns);
-        resetColor(btn_fonts);
-        resetColor(btn_icons);
-        ind_typo.setOpaque(true);
-        ind_btns.setOpaque(false);
-        ind_data.setOpaque(false);
-        ind_fonts.setOpaque(false);
-        ind_icons.setOpaque(false);
+        setColor(pnlCiudad);
+    }//GEN-LAST:event_pnlCiudadMouseEntered
 
-        cardLayout.show(pnlRight, "card2");
-    }//GEN-LAST:event_btn_typoMousePressed
+    private void pnlFichaTecnicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlFichaTecnicaMouseClicked
 
-    // set and reset color
-    void setColor(JPanel panel) {
-        panel.setBackground(new Color(135, 112, 225));
-    }
+    private void pnlFichaTecnicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMouseEntered
+        // TODO add your handling code here:
+        resetColor(pnlOrdenTrabajo);
+        setColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlCiudad);
+        resetColor(pnlTintura);
+    }//GEN-LAST:event_pnlFichaTecnicaMouseEntered
 
-    void resetColor(JPanel panel) {
-        panel.setBackground(new Color(76, 41, 211));
-    }
+    private void pnlOrdenTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlOrdenTrabajoMouseClicked
+
+    private void pnlOrdenTrabajoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseEntered
+        setColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlCiudad);
+        resetColor(pnlTintura);
+    }//GEN-LAST:event_pnlOrdenTrabajoMouseEntered
+
+    private void pnlMaterialesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMaterialesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pnlMaterialesMouseClicked
+
+    private void pnlMaterialesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMaterialesMouseEntered
+         resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        setColor(pnlMateriales);
+        resetColor(pnlCiudad);
+        resetColor(pnlTintura);
+    }//GEN-LAST:event_pnlMaterialesMouseEntered
 
     /**
      * @param args the command line arguments
@@ -683,39 +695,35 @@ public class frmLandingPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel btn_btns;
-    private javax.swing.JPanel btn_data;
-    private javax.swing.JPanel btn_fonts;
-    private javax.swing.JPanel btn_icons;
-    private javax.swing.JPanel btn_typo;
-    private javax.swing.JPanel ind_btns;
-    private javax.swing.JPanel ind_data;
-    private javax.swing.JPanel ind_fonts;
-    private javax.swing.JPanel ind_icons;
-    private javax.swing.JPanel ind_typo;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblCiudad;
     private javax.swing.JLabel lblClose;
+    private javax.swing.JLabel lblFichaTecnica;
     private javax.swing.JLabel lblIcon;
+    private javax.swing.JLabel lblMateriales;
     private javax.swing.JLabel lblMaximize;
     private javax.swing.JLabel lblMinimize;
     private javax.swing.JLabel lblOS;
+    private javax.swing.JLabel lblOrdenTrabajo;
+    private javax.swing.JLabel lblTintura;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUser;
     private javax.swing.JLabel lblVersion;
     private javax.swing.JPanel pnlActions;
     private javax.swing.JPanel pnlAdmin;
+    private javax.swing.JPanel pnlCiudad;
     private javax.swing.JPanel pnlContenedor;
     private javax.swing.JPanel pnlDataCards;
+    private javax.swing.JPanel pnlFichaTecnica;
     private javax.swing.JPanel pnlHeader;
+    private javax.swing.JPanel pnlMateriales;
+    private javax.swing.JPanel pnlOrdenTrabajo;
     private javax.swing.JPanel pnlParent;
     private javax.swing.JPanel pnlRight;
+    private javax.swing.JPanel pnlTintura;
     private javax.swing.JPanel pnlTitle;
     private javax.swing.JPanel pnlTop;
     private javax.swing.JPanel sidepane;
