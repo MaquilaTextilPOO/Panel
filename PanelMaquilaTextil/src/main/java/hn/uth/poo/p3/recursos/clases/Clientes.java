@@ -5,44 +5,89 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import java.util.Date;
-
 /**
  *
  * @author maureen
  */
-public class Clientes extends Persona {
-    private int codCliente;
-    private int limCredito;
+public class Clientes {
+    private int CodCliente;
+    private double LimCredito;
+    private String NomCliente;
+    private String Direccion;
+    private int Telefono;
+    private String Email;
+    private String TipoCliente;
+    
 
     public Clientes() {
         super();
-    }
-
-    public Clientes(int codCliente, int limCredito, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
-        super(CodPersona, TigoPersona, Nombre, FecCreacion);
-        this.codCliente = codCliente;
-        this.limCredito = limCredito;
-    }
-      
-
-    public int getLimCredito() {
-        return limCredito;
-    }
-
-    public void setLimCredito(int limCredito) {
-        this.limCredito = limCredito;
-    }
     
-    
+}
+
+    public Clientes(int CodCliente, double LimCredito, String NomCliente, String Direccion, int Telefono, String Email, String TipoCliente) {
+        this.CodCliente = CodCliente;
+        this.LimCredito = LimCredito;
+        this.NomCliente = NomCliente;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.Email = Email;
+        this.TipoCliente = TipoCliente;
+    }
 
     public int getCodCliente() {
-        return codCliente;
+        return CodCliente;
     }
 
-    public void setCodCliente(int codCliente) {
-        this.codCliente = codCliente;
+    public void setCodCliente(int CodCliente) {
+        this.CodCliente = CodCliente;
     }
-    
+
+    public double getLimCredito() {
+        return LimCredito;
+    }
+
+    public void setLimCredito(double LimCredito) {
+        this.LimCredito = LimCredito;
+    }
+
+    public String getNomCliente() {
+        return NomCliente;
+    }
+
+    public void setNomCliente(String NomCliente) {
+        this.NomCliente = NomCliente;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
+    public int getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(int Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getTipoCliente() {
+        return TipoCliente;
+    }
+
+    public void setTipoCliente(String TipoCliente) {
+        this.TipoCliente = TipoCliente;
+    }
     
 }
