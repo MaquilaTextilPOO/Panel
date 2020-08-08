@@ -5,7 +5,6 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import hn.uth.poo.p3.recursos.clases.Productos;
 import java.util.ArrayList;
 import java.util.Date;
 

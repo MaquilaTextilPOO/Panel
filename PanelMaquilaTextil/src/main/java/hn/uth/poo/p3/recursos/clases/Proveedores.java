@@ -5,8 +5,6 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import java.util.Date;
-
 /**
  *
  * @author maureen

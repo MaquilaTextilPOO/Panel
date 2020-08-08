@@ -5,30 +5,43 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import hn.uth.poo.p3.recursos.clases.Proveedores;
-
 /**
  *
  * @author maureen
  */
-public abstract class Productos implements IProducto{
-   private int CodProducto;
-   private String descProducto;
-   private Proveedores Proveedores;
+public  class Productos implements IProducto {
+
+    private int CodProducto;
+    private String descProducto;
+    private String Ruta;
+    private String Nombre;
 
     public Productos() {
         super();
     }
-   
-   
 
-    public Productos(int CodProducto, String descProducto, Proveedores Proveedores) {
+    public Productos(int CodProducto, String descProducto, String Ruta, String Nombre) {
         this.CodProducto = CodProducto;
         this.descProducto = descProducto;
-        this.Proveedores = Proveedores;
+        this.Ruta = Ruta;
+        this.Nombre = Nombre;
     }
-   
-   
+
+    public String getRuta() {
+        return Ruta;
+    }
+
+    public void setRuta(String Ruta) {
+        this.Ruta = Ruta;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
 
     public int getCodProducto() {
         return CodProducto;
@@ -46,13 +59,9 @@ public abstract class Productos implements IProducto{
         this.descProducto = descProducto;
     }
 
-    public Proveedores getProveedores() {
-        return Proveedores;
+    @Override
+    public double CalcularPrecioVenta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setProveedores(Proveedores Proveedores) {
-        this.Proveedores = Proveedores;
-    }
-   
-   
 }
