@@ -675,6 +675,17 @@ public class frmLandingPage extends javax.swing.JFrame {
 
     private void pnlOrdenTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseClicked
         // TODO add your handling code here:
+        
+         setColor(pnlOrdenTrabajo);
+
+        pnlOrdenTrabajo pOrdenTrabajo= new pnlOrdenTrabajo();
+        pOrdenTrabajo.setSize(1000, 600);
+        pOrdenTrabajo.setLocation(100, 15);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pOrdenTrabajo, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
     }//GEN-LAST:event_pnlOrdenTrabajoMouseClicked
 
     private void pnlOrdenTrabajoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseEntered

@@ -14,11 +14,12 @@ import java.util.Date;
  * https://www.ejemplode.com/images/uploads/documentos/orden-trabajo.jpg
  */
 public class OrdenesTrabajo {
+
     private int NumOrden;
     private int Folio;
     private Date Fecha;
-    private String Lugar;
-    private Clientes Cliente;
+    private String LugarEntrega;
+    private int CodCliente;
     private Date FechaEntrega;
     private String Descripcion;
     private String Observaciones;
@@ -27,20 +28,18 @@ public class OrdenesTrabajo {
     private double Adelanto;
     private double Restante;
     private String FormaPago;
+    private String EstOrden;
 
     public OrdenesTrabajo() {
         super();
     }
-    
-    
-    
 
-    public OrdenesTrabajo(int NumOrden, int Folio, Date Fecha, String Lugar, Clientes Cliente, Date FechaEntrega, String Descripcion, String Observaciones, ArrayList<Productos> ListaProductos, double TotPagar, double Adelanto, double Restante, String FormaPago) {
+    public OrdenesTrabajo(int NumOrden, int Folio, Date Fecha, String LugarEntrega, int CodCliente, Date FechaEntrega, String Descripcion, String Observaciones, ArrayList<Productos> ListaProductos, double TotPagar, double Adelanto, double Restante, String FormaPago, String EstOrden) {
         this.NumOrden = NumOrden;
         this.Folio = Folio;
         this.Fecha = Fecha;
-        this.Lugar = Lugar;
-        this.Cliente = Cliente;
+        this.LugarEntrega = LugarEntrega;
+        this.CodCliente = CodCliente;
         this.FechaEntrega = FechaEntrega;
         this.Descripcion = Descripcion;
         this.Observaciones = Observaciones;
@@ -49,9 +48,16 @@ public class OrdenesTrabajo {
         this.Adelanto = Adelanto;
         this.Restante = Restante;
         this.FormaPago = FormaPago;
+        this.EstOrden = EstOrden;
     }
-    
-    
+
+    public String getEstOrden() {
+        return EstOrden;
+    }
+
+    public void setEstOrden(String EstOrden) {
+        this.EstOrden = EstOrden;
+    }
 
     public int getNumOrden() {
         return NumOrden;
@@ -77,20 +83,20 @@ public class OrdenesTrabajo {
         this.Fecha = Fecha;
     }
 
-    public String getLugar() {
-        return Lugar;
+    public String getLugarEntrega() {
+        return LugarEntrega;
     }
 
-    public void setLugar(String Lugar) {
-        this.Lugar = Lugar;
+    public void setLugarEntrega(String LugarEntrega) {
+        this.LugarEntrega = LugarEntrega;
     }
 
-    public Clientes getCliente() {
-        return Cliente;
+    public int getCodCliente() {
+        return CodCliente;
     }
 
-    public void setCliente(Clientes Cliente) {
-        this.Cliente = Cliente;
+    public void setCodCliente(int CodCliente) {
+        this.CodCliente = CodCliente;
     }
 
     public Date getFechaEntrega() {
@@ -156,9 +162,5 @@ public class OrdenesTrabajo {
     public void setFormaPago(String FormaPago) {
         this.FormaPago = FormaPago;
     }
-    
-    
-    
-    
-    
+
 }
