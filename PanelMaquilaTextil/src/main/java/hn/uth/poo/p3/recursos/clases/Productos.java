@@ -9,22 +9,32 @@ package hn.uth.poo.p3.recursos.clases;
  *
  * @author maureen
  */
-public  class Productos implements IProducto {
+public class Productos implements IProducto {
 
     private int CodProducto;
+    private String NomProducto;
     private String descProducto;
+    private double precio;
     private String Ruta;
-    private String Nombre;
 
     public Productos() {
         super();
     }
 
-    public Productos(int CodProducto, String descProducto, String Ruta, String Nombre) {
+    public Productos(int CodProducto, String NomProducto, String descProducto, double precio, String Ruta) {
         this.CodProducto = CodProducto;
+        this.NomProducto = NomProducto;
         this.descProducto = descProducto;
+        this.precio = precio;
         this.Ruta = Ruta;
-        this.Nombre = Nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     public String getRuta() {
@@ -35,12 +45,12 @@ public  class Productos implements IProducto {
         this.Ruta = Ruta;
     }
 
-    public String getNombre() {
-        return Nombre;
+    public String getNomProducto() {
+        return NomProducto;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNomProducto(String NomProducto) {
+        this.NomProducto = NomProducto;
     }
 
     public int getCodProducto() {
