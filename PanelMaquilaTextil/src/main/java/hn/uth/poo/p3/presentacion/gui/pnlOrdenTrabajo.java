@@ -90,7 +90,7 @@ public class pnlOrdenTrabajo extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         btnAddProducto = new javax.swing.JButton();
 
-        pnlEncabezado.setBackground(new java.awt.Color(93, 15, 243));
+        pnlEncabezado.setBackground(new java.awt.Color(48, 34, 84));
 
         jLabel1.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(250, 243, 243));

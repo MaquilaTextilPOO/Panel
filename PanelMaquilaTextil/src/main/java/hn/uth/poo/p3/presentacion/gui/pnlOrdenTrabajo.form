@@ -66,7 +66,7 @@
         <Container class="javax.swing.JPanel" name="pnlEncabezado">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="f3" green="f" red="5d" type="rgb"/>
+              <Color blue="54" green="22" red="30" type="rgb"/>
             </Property>
           </Properties>
 

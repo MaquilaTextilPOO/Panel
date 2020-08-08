@@ -100,7 +100,7 @@ public class pnlProductos extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
 
-        pnlEncabezado.setBackground(new java.awt.Color(93, 15, 243));
+        pnlEncabezado.setBackground(new java.awt.Color(48, 34, 84));
 
         jLabel1.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(250, 243, 243));
@@ -330,9 +330,7 @@ public class pnlProductos extends javax.swing.JPanel {
                         .addGap(6, 6, 6))
                     .addComponent(lblFoto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlBodyLayout.createSequentialGroup()
-                        .addComponent(lblRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0))
+                    .addComponent(lblRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtDescProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblDescripcion)))
