@@ -84,9 +84,5 @@ public class FormaPagoNegocio {
         return listaFormaPago;
     }
 
-    public void Actualizar(FormaPago formaPago) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }
 
