@@ -667,7 +667,23 @@ public class frmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlMaterialesMouseEntered
 
     private void pnlNormaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlNormaMouseClicked
-        // TODO add your handling code here:
+        resetColor(pnlClientes);
+        resetColor(pnlOrdenTrabajo);
+        resetColor(pnlFichaTecnica);
+        resetColor(pnlMateriales);
+        resetColor(pnlProveedores);
+        resetColor(pnlCiudad);
+        resetColor(pnlPersona);
+        setColor(pnlNorma);
+       
+        pnlNorma pNorma= new pnlNorma();
+        pNorma.setSize(400, 300);
+        pNorma.setLocation(5, 5);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pNorma, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
     }//GEN-LAST:event_pnlNormaMouseClicked
 
     private void pnlNormaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlNormaMouseEntered
