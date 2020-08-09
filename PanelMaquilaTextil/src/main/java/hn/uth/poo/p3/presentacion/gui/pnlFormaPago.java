@@ -35,7 +35,6 @@ public class pnlFormaPago extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
         lblFormaPago = new javax.swing.JLabel();
         txtFormaPago = new javax.swing.JTextField();
         lblNomFormaPago = new javax.swing.JLabel();
@@ -47,10 +46,9 @@ public class pnlFormaPago extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
-
-        lblTitulo.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(48, 34, 84));
-        lblTitulo.setText("Configuración Forma de Pago");
+        pnlEncabezado = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         lblFormaPago.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
         lblFormaPago.setForeground(new java.awt.Color(48, 34, 84));
@@ -163,52 +161,72 @@ public class pnlFormaPago extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblDatos);
         tblDatos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
+        pnlEncabezado.setBackground(new java.awt.Color(48, 34, 84));
+
+        jLabel1.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(250, 243, 243));
+        jLabel1.setText("Forma de Pago");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-pago-en-línea-64.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
+        pnlEncabezado.setLayout(pnlEncabezadoLayout);
+        pnlEncabezadoLayout.setHorizontalGroup(
+            pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEncabezadoLayout.createSequentialGroup()
+                .addGap(177, 177, 177)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlEncabezadoLayout.setVerticalGroup(
+            pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEncabezadoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblNomFormaPago)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNomFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblFormaPago)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
                                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblNomFormaPago)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtNomFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblFormaPago)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscar))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblTitulo)
-                        .addGap(47, 47, 47)))
-                .addGap(66, 66, 66))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscar))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblTitulo)
-                .addGap(28, 28, 28)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFormaPago)
                     .addComponent(txtFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -217,15 +235,15 @@ public class pnlFormaPago extends javax.swing.JPanel {
                     .addComponent(lblNomFormaPago)
                     .addComponent(txtNomFormaPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizar)
                     .addComponent(btnLeer)
                     .addComponent(btnGuardar)
                     .addComponent(btnEliminar))
-                .addGap(18, 18, 18)
+                .addGap(46, 46, 46)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -307,10 +325,12 @@ public class pnlFormaPago extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLeer;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblFormaPago;
     private javax.swing.JLabel lblNomFormaPago;
-    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtFormaPago;
     private javax.swing.JTextField txtNomFormaPago;

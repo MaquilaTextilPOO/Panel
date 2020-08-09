@@ -20,7 +20,7 @@ import java.util.List;
  * @author maureen
  */
 public class ProductosDatos {
-    
+
     public static int secuenciaCodProducto() throws SQLException {
         int cod = 0;
         try {
@@ -50,13 +50,14 @@ public class ProductosDatos {
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT CODPRODUCTO,DESCPRODUCTO,RUTA FOTO FROM PRODUCTOS";
+            String sql = "SELECT CODPRODUCTO,NOMPRODUCTO,DESCPRODUCTO,RUTA FOTO FROM PRODUCTOS";
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 Productos producto = new Productos();
                 producto.setCodProducto(rs.getInt(1));
-                producto.setDescProducto(rs.getString(2));
-                producto.setRuta(rs.getString(3));
+                producto.setNomProducto(rs.getString(2));
+                producto.setDescProducto(rs.getString(3));
+                producto.setRuta(rs.getString(4));
                 productos.add(producto);
             }
             rs.close();
@@ -70,15 +71,17 @@ public class ProductosDatos {
 
     }
 
-  public static String InsertarProducto(Productos producto) throws SQLException {
+    public static String InsertarProducto(Productos producto) throws SQLException {
         try {
             int cod = secuenciaCodProducto();
             Connection cn = conexion.ObtenerConexion();
-            String sql = "INSERT INTO Productos VALUES(?,?,?)";
+            String sql = "INSERT INTO Productos VALUES(?,?,?,?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);
             ps.setInt(1, cod);
-            ps.setString(2, producto.getDescProducto());
-            ps.setString(3, producto.getRuta());            
+            ps.setString(2, producto.getNomProducto());
+            ps.setDouble(3, producto.getPrecio());
+            ps.setString(4, producto.getDescProducto());
+            ps.setString(5, producto.getRuta());
             ps.execute();
             ps.close();
             cn.close();
@@ -92,11 +95,14 @@ public class ProductosDatos {
     public static String ActualizarProducto(Productos productos) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
-            String sql = "UPDATE PRODUCTOS SET DESCPRODUCTO= ?, RUTA=? WHERE CODPRODUCTO=?";
+            String sql = "UPDATE PRODUCTOS SET DESCPRODUCTO= ?, NOMPRODUCTO=?, PRECIO=?,RUTA=? WHERE CODPRODUCTO=?";
             PreparedStatement ps = cn.prepareStatement(sql);
-            ps.setString(1, productos.getRuta());
-            ps.setString(2, productos.getDescProducto());
-            ps.setInt(3, productos.getCodProducto());
+            ps.setString(1, productos.getDescProducto());
+            ps.setString(2, productos.getNomProducto());
+            ps.setDouble(3, productos.getPrecio());
+            ps.setString(4, productos.getRuta());
+
+            ps.setInt(5, productos.getCodProducto());
             ps.execute();
             ps.close();
             cn.close();
@@ -127,17 +133,18 @@ public class ProductosDatos {
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT CODPRODUCTO,DESCPRODUCTO,RUTA FROM PRODUCTOS WHERE UPPER(DESCPRODUCTO) LIKE ?";
+            String sql = "SELECT CODPRODUCTO,NOMPRODUCTO,DESCPRODUCTO,RUTA FROM PRODUCTOS WHERE UPPER(NOMPRODUCTO) LIKE ?";
             PreparedStatement ps = cn.prepareStatement(sql);
 
-            ps.setString(1, "%" + Productos.getDescProducto().toUpperCase() + "%");
+            ps.setString(1, "%" + Productos.getNomProducto().toUpperCase() + "%");
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 do {
                     Productos productosObjeto = new Productos();
-                    productosObjeto.setCodProducto(1);
-                    productosObjeto.setDescProducto(rs.getString(2));
-                    productosObjeto.setRuta(rs.getString(3));
+                    productosObjeto.setCodProducto(rs.getInt(1));
+                    productosObjeto.setNomProducto(rs.getString(2));
+                    productosObjeto.setDescProducto(rs.getString(3));
+                    productosObjeto.setRuta(rs.getString(4));
                     productos.add(productosObjeto);
                 } while (rs.next());
 
