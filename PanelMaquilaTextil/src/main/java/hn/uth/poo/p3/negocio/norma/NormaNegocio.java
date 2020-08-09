@@ -5,7 +5,7 @@
  */
 package hn.uth.poo.p3.negocio.norma;
 
-import hn.uth.poo.p3.datos.Norma.NormaDatos;
+import hn.uth.poo.p3.datos.norma.NormaDatos;
 import hn.uth.poo.p3.recursos.clases.Norma;
 import java.util.ArrayList;
 import java.util.List;
