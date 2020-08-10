@@ -5,8 +5,9 @@
  */
 package hn.uth.poo.p3.presentacion.gui;
 
-import hn.uth.poo.p3.negocio.ciudad.CiudadNegocio;
-import hn.uth.poo.p3.recursos.clases.Ciudad;
+import hn.uth.poo.p3.negocio.OrdenTrabajo.OrdenTrabajoDetalleNegocio;
+import hn.uth.poo.p3.recursos.clases.OrdenesTrabajo;
+import hn.uth.poo.p3.recursos.clases.OrdenesTrabajoDetalle;
 import java.awt.HeadlessException;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -16,30 +17,33 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author maureen
  */
-public class pnlCiudad extends javax.swing.JPanel {
-
-    DefaultTableModel modelo;
-
+public class pnlModalAddProducto extends javax.swing.JPanel {
+ DefaultTableModel modelo;
     /**
-     * Creates new form pnlCiudad
+     * Creates new form pnlModalAddProducto
      */
-    public pnlCiudad() {
+    public pnlModalAddProducto() {
         initComponents();
-        inicio();
+          inicio();
         Leer();
     }
 
-    private void inicio() {
-        txtCodCiudad.setText("0");
+    
+       private void inicio() {
+        txtNumOrdenDetalle.setText("0");
         modelo = (DefaultTableModel) tblDatos.getModel();
     }
 
     private void Leer() {
         try {
-            List<Ciudad> listaCiudad = new CiudadNegocio().Leer();
+            OrdenesTrabajoDetalle ordenesTrabajoDetalle = new OrdenesTrabajoDetalle();
+            OrdenesTrabajo ordenTrabajo = new OrdenesTrabajo();
+            
+            //int numOrden=    lblNumOrden.setText( numOrden);
+           List<OrdenesTrabajoDetalle> listaOrdenesTrabajoDetalle = new OrdenTrabajoDetalleNegocio().Leer(ordenesTrabajoDetalle);
             modelo.setRowCount(0);
-            for (Ciudad ciudade : listaCiudad) {
-                Object[] registroLeido = {ciudade.getCodCiudad(), ciudade.getNomCiudad()};
+            for (OrdenesTrabajoDetalle ordenTrabajoDetalle : listaOrdenesTrabajoDetalle) {
+                Object[] registroLeido = {ordenTrabajoDetalle.getNumOrden(),ordenTrabajoDetalle.getNumOrdenDetalle(),ordenTrabajoDetalle,  };
                 modelo.addRow(registroLeido);
 
             }
@@ -48,7 +52,6 @@ public class pnlCiudad extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,11 +61,12 @@ public class pnlCiudad extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnActualizar = new javax.swing.JButton();
         btnLeer = new javax.swing.JButton();
-        lblCodigo = new javax.swing.JLabel();
-        txtCodCiudad = new javax.swing.JTextField();
-        lblNomCiudad = new javax.swing.JLabel();
+        lblNumOrdenDet = new javax.swing.JLabel();
+        txtNumOrdenDetalle = new javax.swing.JTextField();
+        Producto = new javax.swing.JLabel();
         txtNomCiudad = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -72,6 +76,11 @@ public class pnlCiudad extends javax.swing.JPanel {
         pnlEncabezado = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblNumOrden = new javax.swing.JLabel();
+        Producto1 = new javax.swing.JLabel();
+        txtCantProducto = new javax.swing.JTextField();
+        Producto2 = new javax.swing.JLabel();
+        txtTotalPagar = new javax.swing.JTextField();
 
         btnActualizar.setFont(new java.awt.Font("Inter", 1, 14)); // NOI18N
         btnActualizar.setForeground(new java.awt.Color(48, 34, 84));
@@ -97,16 +106,16 @@ public class pnlCiudad extends javax.swing.JPanel {
             }
         });
 
-        lblCodigo.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
-        lblCodigo.setForeground(new java.awt.Color(48, 34, 84));
-        lblCodigo.setText("Codigo:");
+        lblNumOrdenDet.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        lblNumOrdenDet.setForeground(new java.awt.Color(48, 34, 84));
+        lblNumOrdenDet.setText("Núm. Orden Det.");
 
-        txtCodCiudad.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        txtCodCiudad.setEnabled(false);
+        txtNumOrdenDetalle.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        txtNumOrdenDetalle.setEnabled(false);
 
-        lblNomCiudad.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
-        lblNomCiudad.setForeground(new java.awt.Color(48, 34, 84));
-        lblNomCiudad.setText("Nombre:");
+        Producto.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        Producto.setForeground(new java.awt.Color(48, 34, 84));
+        Producto.setText("Producto:");
 
         txtNomCiudad.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
@@ -156,14 +165,14 @@ public class pnlCiudad extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Codigo", "Nombre"
+                "CodigoProducto", "NomProducto", "CantProducto", "Precio", "Total"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -187,98 +196,159 @@ public class pnlCiudad extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Inter", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(250, 243, 243));
-        jLabel1.setText("Ciudad");
+        jLabel1.setText("Agregar Productos a la Orden");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-ciudad-64.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-ropa-familiar-64.png"))); // NOI18N
+
+        lblNumOrden.setFont(new java.awt.Font("Inter", 0, 24)); // NOI18N
+        lblNumOrden.setForeground(new java.awt.Color(255, 250, 250));
 
         javax.swing.GroupLayout pnlEncabezadoLayout = new javax.swing.GroupLayout(pnlEncabezado);
         pnlEncabezado.setLayout(pnlEncabezadoLayout);
         pnlEncabezadoLayout.setHorizontalGroup(
             pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEncabezadoLayout.createSequentialGroup()
-                .addGap(275, 275, 275)
+                .addGap(95, 95, 95)
                 .addComponent(jLabel1)
-                .addGap(50, 50, 50)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblNumOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlEncabezadoLayout.setVerticalGroup(
             pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEncabezadoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addContainerGap()
+                .addGroup(pnlEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNumOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlEncabezadoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1)))
                 .addContainerGap())
+        );
+
+        Producto1.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        Producto1.setForeground(new java.awt.Color(48, 34, 84));
+        Producto1.setText("Cantidad:");
+
+        Producto2.setFont(new java.awt.Font("Inter", 1, 13)); // NOI18N
+        Producto2.setForeground(new java.awt.Color(48, 34, 84));
+        Producto2.setText("Total Pagar:");
+
+        txtTotalPagar.setEnabled(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(lblNumOrdenDet)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNumOrdenDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Producto)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Producto1)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnBuscar))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(149, 149, 149)
+                                        .addComponent(Producto2)
+                                        .addGap(2, 2, 2)
+                                        .addComponent(txtTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(txtCantProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNumOrdenDet)
+                    .addComponent(txtNumOrdenDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Producto)
+                    .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Producto1)
+                        .addComponent(txtCantProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Producto2))
+                    .addComponent(txtTotalPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminar)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnActualizar)
+                    .addComponent(btnLeer))
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCodigo)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNomCiudad)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(67, 67, 67)
-                                        .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnBuscar))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 696, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(pnlEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCodigo)
-                    .addComponent(txtCodCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNomCiudad)
-                    .addComponent(txtNomCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnGuardar)
-                    .addComponent(btnActualizar)
-                    .addComponent(btnLeer))
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(150, Short.MAX_VALUE))
+            .addGap(0, 482, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
         try {
-            Ciudad ciudad = new Ciudad();
-            ciudad.setCodCiudad(Integer.parseInt(txtCodCiudad.getText()));
+            OrdenesTrabajoDetalle ordenesTrabajoDetalle = new OrdenesTrabajoDetalle();
+            
+           /* ordenesTrabajoDetalle.setCodProductos(PROPERTIES);
+            ciudad.setCodCiudad(Integer.parseInt(txtNumOrdenDetalle.getText()));
             ciudad.setNomCiudad(txtNomCiudad.getText());
             new CiudadNegocio().Actualizar(ciudad);
-            JOptionPane.showMessageDialog(null, "Actualizado", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Actualizado", "Exito", JOptionPane.INFORMATION_MESSAGE);*/
             Leer();
         } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -293,11 +363,11 @@ public class pnlCiudad extends javax.swing.JPanel {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         try {
-            Ciudad ciudad = new Ciudad();
-            ciudad.setCodCiudad(Integer.parseInt(txtCodCiudad.getText())+1);
+            OrdenesTrabajoDetalle ordenesTrabajoDetalle = new OrdenesTrabajoDetalle();
+     /*       ciudad.setCodCiudad(Integer.parseInt(txtNumOrdenDetalle.getText())+1);
             ciudad.setNomCiudad(txtNomCiudad.getText());
             String respuesta = new CiudadNegocio().Insertar(ciudad);
-            JOptionPane.showMessageDialog(null, "Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);*/
             Leer();
         } catch (HeadlessException | NumberFormatException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
@@ -307,10 +377,11 @@ public class pnlCiudad extends javax.swing.JPanel {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
         try {
-            Ciudad ciudad = new Ciudad();
-            ciudad.setCodCiudad(Integer.parseInt(txtCodCiudad.getText()));
-            ciudad.setNomCiudad(txtNomCiudad.getText());
-            new CiudadNegocio().Eliminar(ciudad);
+            OrdenesTrabajoDetalle ordenesTrabajoDetalle = new OrdenesTrabajoDetalle();
+            ordenesTrabajoDetalle.setNumOrden(Integer.parseInt(lblNumOrden.getText()));
+            ordenesTrabajoDetalle.setNumOrdenDetalle(Integer.parseInt(txtNumOrdenDetalle.getText()));
+            
+            new OrdenTrabajoDetalleNegocio().Eliminar(ordenesTrabajoDetalle);
             JOptionPane.showMessageDialog(null, "Eliminado", "Exito", JOptionPane.INFORMATION_MESSAGE);
             Leer();
         } catch (HeadlessException | NumberFormatException e) {
@@ -321,15 +392,15 @@ public class pnlCiudad extends javax.swing.JPanel {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         try {
-            Ciudad ciudad = new Ciudad();
-            ciudad.setNomCiudad(txtNomCiudad.getText());
+            OrdenesTrabajoDetalle ordenesTrabajoDetalle = new OrdenesTrabajoDetalle();
+           /* ciudad.setNomCiudad(txtNomCiudad.getText());
             List<Ciudad> listaCiudad = new CiudadNegocio().Buscar(ciudad);
             modelo.setRowCount(0);
             for (Ciudad ciudad1 : listaCiudad) {
                 Object[] registroLeido = {ciudad1.getCodCiudad(), ciudad1.getNomCiudad()};
                 modelo.addRow(registroLeido);
             }
-            tblDatos.setModel(modelo);
+            tblDatos.setModel(modelo);*/
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -338,13 +409,15 @@ public class pnlCiudad extends javax.swing.JPanel {
     private void tblDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosMouseClicked
         // TODO add your handling code here:atos
         int filaseleccionada = tblDatos.getSelectedRow();
-        txtCodCiudad.setText(modelo.getValueAt(filaseleccionada, 0).toString());
+        txtNumOrdenDetalle.setText(modelo.getValueAt(filaseleccionada, 0).toString());
         txtNomCiudad.setText(modelo.getValueAt(filaseleccionada, 1).toString());
-
     }//GEN-LAST:event_tblDatosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Producto;
+    private javax.swing.JLabel Producto1;
+    private javax.swing.JLabel Producto2;
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
@@ -352,12 +425,15 @@ public class pnlCiudad extends javax.swing.JPanel {
     private javax.swing.JButton btnLeer;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblCodigo;
-    private javax.swing.JLabel lblNomCiudad;
+    private javax.swing.JLabel lblNumOrden;
+    private javax.swing.JLabel lblNumOrdenDet;
     private javax.swing.JPanel pnlEncabezado;
     private javax.swing.JTable tblDatos;
-    private javax.swing.JTextField txtCodCiudad;
+    private javax.swing.JTextField txtCantProducto;
     private javax.swing.JTextField txtNomCiudad;
+    private javax.swing.JTextField txtNumOrdenDetalle;
+    private javax.swing.JTextField txtTotalPagar;
     // End of variables declaration//GEN-END:variables
 }
