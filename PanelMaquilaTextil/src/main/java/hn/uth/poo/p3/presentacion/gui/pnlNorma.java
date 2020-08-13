@@ -223,7 +223,7 @@ public class pnlNorma extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             Norma norma = new Norma();
-            norma.setCodNorma(Integer.parseInt(txtCodNorma.getText())+1);
+            norma.setCodNorma(txtCodNorma.getText());
             norma.setDescripcion(txtDescripcion.getText());
             String respuesta = new NormaNegocio().Insertar(norma);
             JOptionPane.showMessageDialog(null, "Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -242,7 +242,7 @@ public class pnlNorma extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             Norma norma = new Norma();
-            norma.setCodNorma(Integer.parseInt(txtCodNorma.getText()));
+            norma.setCodNorma(txtCodNorma.getText());
             norma.setDescripcion(txtDescripcion.getText());
             new NormaNegocio().Actualizar(norma);
             JOptionPane.showMessageDialog(null, "Actualizado", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -256,7 +256,7 @@ public class pnlNorma extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             Norma norma = new Norma();
-            norma.setCodNorma(Integer.parseInt(txtCodNorma.getText()));
+            norma.setCodNorma(txtCodNorma.getText());
             norma.setDescripcion(txtDescripcion.getText());
             new NormaNegocio().Eliminar(norma);
             JOptionPane.showMessageDialog(null, "Eliminado", "Exito", JOptionPane.INFORMATION_MESSAGE);

@@ -5,7 +5,7 @@
  */
 package hn.uth.poo.p3.negocio.norma;
 
-import hn.uth.poo.p3.datos.norma.NormaDatos;
+import hn.uth.poo.p3.datos.Norma.NormaDatos;
 import hn.uth.poo.p3.recursos.clases.Norma;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class NormaNegocio {
         String respuesta = "Error";
         try {
             
-            if (norma.getCodNorma() <= 0) {
+            if (norma.getCodNorma().isEmpty()) {
                 throw new Exception("Error Insertar Norma: El Codigo no debe de ser menor o igual a 0");
 
             }

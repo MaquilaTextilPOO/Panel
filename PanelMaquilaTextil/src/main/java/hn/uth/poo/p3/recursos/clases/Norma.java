@@ -10,7 +10,7 @@ package hn.uth.poo.p3.recursos.clases;
  * @author maureen
  */
 public class Norma {
-    private int CodNorma;
+    private String CodNorma;
     private String Descripcion;
 
     public Norma() {
@@ -19,18 +19,18 @@ public class Norma {
     
     
 
-    public Norma(int CodNorma, String Descripcion) {
+    public Norma(String CodNorma, String Descripcion) {
         this.CodNorma = CodNorma;
         this.Descripcion = Descripcion;
     }
     
     
 
-    public int getCodNorma() {
+    public String getCodNorma() {
         return CodNorma;
     }
 
-    public void setCodNorma(int CodNorma) {
+    public void setCodNorma(String CodNorma) {
         this.CodNorma = CodNorma;
     }
 

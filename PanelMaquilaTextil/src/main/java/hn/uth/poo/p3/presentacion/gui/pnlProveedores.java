@@ -5,7 +5,8 @@
  */
 package hn.uth.poo.p3.presentacion.gui;
 
-import hn.uth.poo.p3.negocio.proveedores.ProveedoresNegocio;
+
+import hn.uth.poo.p3.negocio.Proveedores.ProveedoresNegocio;
 import hn.uth.poo.p3.recursos.clases.Proveedores;
 import java.awt.HeadlessException;
 import java.util.List;

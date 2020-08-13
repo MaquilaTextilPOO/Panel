@@ -664,6 +664,16 @@ public class frmLandingPage extends javax.swing.JFrame {
 
     private void pnlTinturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseClicked
         // TODO add your handling code here:
+         setColor(pnlTintura);
+
+        pnlTintura pTintura = new pnlTintura();
+        pTintura.setSize(1000, 600);
+        pTintura.setLocation(100, 15);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pTintura, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
     }//GEN-LAST:event_pnlTinturaMouseClicked
 
     private void pnlTinturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseEntered
