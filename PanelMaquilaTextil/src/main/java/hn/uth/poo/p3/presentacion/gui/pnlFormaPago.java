@@ -197,7 +197,7 @@ public class pnlFormaPago extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -218,9 +218,8 @@ public class pnlFormaPago extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnLeer, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscar))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,7 +250,7 @@ public class pnlFormaPago extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             FormaPago formaPago = new FormaPago();
-            formaPago.setFormaPago(Integer.parseInt(txtFormaPago.getText()));
+            formaPago.setCodFormaPago(Integer.parseInt(txtFormaPago.getText()));
             formaPago.setNomFormaPago(txtNomFormaPago.getText());
             new FormaPagoNegocio().Actualizar(formaPago);
             JOptionPane.showMessageDialog(null, "Actualizado", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -270,7 +269,7 @@ public class pnlFormaPago extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             FormaPago formaPago = new FormaPago();
-            formaPago.setFormaPago(Integer.parseInt(txtFormaPago.getText())+1);
+            formaPago.setCodFormaPago(Integer.parseInt(txtFormaPago.getText())+1);
             formaPago.setNomFormaPago(txtNomFormaPago.getText());
             String respuesta = new FormaPagoNegocio().Insertar(formaPago);
             JOptionPane.showMessageDialog(null, "Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -284,7 +283,7 @@ public class pnlFormaPago extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             FormaPago formaPago = new FormaPago();
-            formaPago.setFormaPago(Integer.parseInt(txtFormaPago.getText()));
+            formaPago.setCodFormaPago(Integer.parseInt(txtFormaPago.getText()));
             formaPago.setNomFormaPago(txtNomFormaPago.getText());
             new FormaPagoNegocio().Eliminar(formaPago);
             JOptionPane.showMessageDialog(null, "Eliminado", "Exito", JOptionPane.INFORMATION_MESSAGE);
@@ -302,7 +301,7 @@ public class pnlFormaPago extends javax.swing.JPanel {
             List<FormaPago> listaFormaPago = new FormaPagoNegocio().Buscar(formaPago);
             modelo.setRowCount(0);
             for (FormaPago formaPago1 : listaFormaPago) {
-                Object[] registroLeido = {formaPago1.getFormaPago(), formaPago1.getNomFormaPago()};
+                Object[] registroLeido = {formaPago1.getCodFormaPago(), formaPago1.getNomFormaPago()};
                 modelo.addRow(registroLeido);
             }
             tblDatos.setModel(modelo);
@@ -337,10 +336,20 @@ public class pnlFormaPago extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void Leer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    try {
+            List<FormaPago> listaFormaPago = new FormaPagoNegocio().Leer();
+            modelo.setRowCount(0);
+            for (FormaPago formaPag : listaFormaPago) {
+                Object[] registroLeido = {formaPag.getCodFormaPago(), formaPag.getNomFormaPago()};
+                modelo.addRow(registroLeido);
+
+            }
+            tblDatos.setModel(modelo);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }   }
 
     private void inicio() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        txtFormaPago.setText("0");
+        modelo = (DefaultTableModel) tblDatos.getModel();    }
 }

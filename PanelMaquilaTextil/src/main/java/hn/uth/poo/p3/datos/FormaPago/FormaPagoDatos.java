@@ -25,7 +25,7 @@ public class FormaPagoDatos {
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT MAX(FORMAPAGO) FROM FORMAPAGO";
+            String sql = "SELECT MAX(CODFORMAPAGO) FROM FORMAPAGO";
             ResultSet rs = st.executeQuery(sql);
 
             if (rs.next()) {
@@ -49,11 +49,11 @@ public class FormaPagoDatos {
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT CODCIUDAD,NOMCIUDAD FROM CIUDAD";
+            String sql = "SELECT CODFORMAPAGO,NOMFORMAPAGO FROM FORMAPAGO";
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
                 FormaPago formaPago = new FormaPago();
-                formaPago.setFormaPago(rs.getInt(1));
+                formaPago.setCodFormaPago(rs.getInt(1));
                 formaPago.setNomFormaPago(rs.getString(2));
                 formasPago.add(formaPago);
             }
@@ -89,10 +89,10 @@ public class FormaPagoDatos {
     public static String ActualizarFormaPago(FormaPago formaPago) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
-            String sql = "UPDATE FORMAPAGO SET NOMFORMAPAGO= ? WHERE FORMAPAGO=?";
+            String sql = "UPDATE FORMAPAGO SET NOMFORMAPAGO= ? WHERE CODFORMAPAGO=?";
             PreparedStatement ps = cn.prepareStatement(sql);
             ps.setString(1, formaPago.getNomFormaPago());
-            ps.setInt(2, formaPago.getFormaPago());
+            ps.setInt(2, formaPago.getCodFormaPago());
             ps.execute();
             ps.close();
             cn.close();
@@ -106,9 +106,9 @@ public class FormaPagoDatos {
     public static String EliminarFormaPago(FormaPago formaPago) throws SQLException {
         try {
             Connection cn = conexion.ObtenerConexion();
-            String sql = "DELETE FROM FORMPAGO WHERE FORMAPAGO=?";
+            String sql = "DELETE FROM FORMPAGO WHERE CODFORMAPAGO=?";
             PreparedStatement ps = cn.prepareStatement(sql);
-            ps.setInt(1, formaPago.getFormaPago());
+            ps.setInt(1, formaPago.getCodFormaPago());
             ps.execute();
             ps.close();
             cn.close();
@@ -123,7 +123,7 @@ public class FormaPagoDatos {
         try {
             Connection cn = conexion.ObtenerConexion();
             Statement st = cn.createStatement();
-            String sql = "SELECT FORMAPAGO,NOMFORMAPAGO FROM FORMAPAGO WHERE UPPER(NOMFORMAPAGO) LIKE ?";
+            String sql = "SELECT CODFORMAPAGO,NOMFORMAPAGO FROM FORMAPAGO WHERE UPPER(NOMFORMAPAGO) LIKE ?";
             PreparedStatement ps = cn.prepareStatement(sql);
 
             ps.setString(1, "%" + FormaPago.getNomFormaPago().toUpperCase() + "%");
@@ -131,7 +131,7 @@ public class FormaPagoDatos {
             if (rs.next()) {
                 do {
                     FormaPago formaPagoObjeto = new FormaPago();
-                    formaPagoObjeto.setFormaPago(1);
+                    formaPagoObjeto.setCodFormaPago(1);
                     formaPagoObjeto.setNomFormaPago(rs.getString(2));
                     formasPago.add(formaPagoObjeto);
                 } while (rs.next());

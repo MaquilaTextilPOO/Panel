@@ -23,6 +23,8 @@ public class pnlOrdenTrabajo extends javax.swing.JPanel {
      */
     public pnlOrdenTrabajo() {
         initComponents();
+        inicio();
+        Leer();
     }
     
      private void inicio() {
@@ -419,11 +421,11 @@ public class pnlOrdenTrabajo extends javax.swing.JPanel {
                         .addComponent(txtRestante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(7, 7, 7)
                 .addComponent(btnAddProducto)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(33, 33, 33)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -457,7 +459,7 @@ public class pnlOrdenTrabajo extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
+            .addGap(0, 636, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -570,10 +572,7 @@ public class pnlOrdenTrabajo extends javax.swing.JPanel {
         pAddProducto.setSize(1000, 600);
         pAddProducto.setLocation(100, 15);
 
-        pnlContenedor.removeAll();
-        pnlContenedor.add(pAddProducto, BorderLayout.CENTER);
-        pnlContenedor.revalidate();
-        pnlContenedor.repaint();
+      
     }//GEN-LAST:event_btnAddProductoActionPerformed
 
 

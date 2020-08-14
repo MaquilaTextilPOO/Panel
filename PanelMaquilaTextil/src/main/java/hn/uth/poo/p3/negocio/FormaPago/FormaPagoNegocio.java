@@ -30,7 +30,7 @@ public class FormaPagoNegocio {
         String respuesta = "Error";
         try {
             
-            if (formaPago.getFormaPago() <= 0) {
+            if (formaPago.getCodFormaPago() <= 0) {
                 throw new Exception("Error Insertar FormaPago: La forma de pago no debe de ser menor o igual a 0");
 
             }

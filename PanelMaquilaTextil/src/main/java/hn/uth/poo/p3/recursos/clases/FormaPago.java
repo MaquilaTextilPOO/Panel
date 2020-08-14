@@ -10,7 +10,7 @@ package hn.uth.poo.p3.recursos.clases;
  * @author maureen
  */
 public class FormaPago {
-    private int FormaPago;
+    private int CodFormaPago;
     private String NomFormaPago;
 
     public FormaPago() {
@@ -20,18 +20,18 @@ public class FormaPago {
     
 
     public FormaPago(int FormaPago, String NomFormaPago) {
-        this.FormaPago = FormaPago;
+        this.CodFormaPago = FormaPago;
         this.NomFormaPago = NomFormaPago;
     }
     
     
 
-    public int getFormaPago() {
-        return FormaPago;
+    public int getCodFormaPago() {
+        return CodFormaPago;
     }
 
-    public void setFormaPago(int FormaPago) {
-        this.FormaPago = FormaPago;
+    public void setCodFormaPago(int CodFormaPago) {
+        this.CodFormaPago = CodFormaPago;
     }
 
     public String getNomFormaPago() {

@@ -115,8 +115,8 @@ public class frmLandingPage extends javax.swing.JFrame {
         lblTintura = new javax.swing.JLabel();
         pnlCiudad = new javax.swing.JPanel();
         lblCiudad = new javax.swing.JLabel();
-        pnlFichaTecnica = new javax.swing.JPanel();
-        lblFichaTecnica = new javax.swing.JLabel();
+        pnlProductosOrden = new javax.swing.JPanel();
+        lblProductosOrden = new javax.swing.JLabel();
         pnlOrdenTrabajo = new javax.swing.JPanel();
         lblOrdenTrabajo = new javax.swing.JLabel();
         pnlMateriales = new javax.swing.JPanel();
@@ -199,6 +199,8 @@ public class frmLandingPage extends javax.swing.JFrame {
         pnlParent.setLayout(new java.awt.BorderLayout());
 
         pnlRight.setLayout(new java.awt.CardLayout());
+
+        pnlDataCards.setBackground(new java.awt.Color(243, 240, 251));
 
         pnlAdmin.setBackground(new java.awt.Color(54, 33, 89));
         pnlAdmin.setForeground(new java.awt.Color(54, 33, 89));
@@ -305,35 +307,35 @@ public class frmLandingPage extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlFichaTecnica.setBackground(new java.awt.Color(64, 43, 100));
-        pnlFichaTecnica.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlProductosOrden.setBackground(new java.awt.Color(64, 43, 100));
+        pnlProductosOrden.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pnlFichaTecnicaMouseClicked(evt);
+                pnlProductosOrdenMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlFichaTecnicaMouseEntered(evt);
+                pnlProductosOrdenMouseEntered(evt);
             }
         });
 
-        lblFichaTecnica.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
-        lblFichaTecnica.setForeground(new java.awt.Color(255, 245, 245));
-        lblFichaTecnica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-bola-winder-16.png"))); // NOI18N
-        lblFichaTecnica.setText("Ficha Técnica");
+        lblProductosOrden.setFont(new java.awt.Font("Inter", 0, 14)); // NOI18N
+        lblProductosOrden.setForeground(new java.awt.Color(255, 245, 245));
+        lblProductosOrden.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-bola-winder-16.png"))); // NOI18N
+        lblProductosOrden.setText("Agregar Productos a una orden");
 
-        javax.swing.GroupLayout pnlFichaTecnicaLayout = new javax.swing.GroupLayout(pnlFichaTecnica);
-        pnlFichaTecnica.setLayout(pnlFichaTecnicaLayout);
-        pnlFichaTecnicaLayout.setHorizontalGroup(
-            pnlFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFichaTecnicaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlProductosOrdenLayout = new javax.swing.GroupLayout(pnlProductosOrden);
+        pnlProductosOrden.setLayout(pnlProductosOrdenLayout);
+        pnlProductosOrdenLayout.setHorizontalGroup(
+            pnlProductosOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlProductosOrdenLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(lblFichaTecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblProductosOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        pnlFichaTecnicaLayout.setVerticalGroup(
-            pnlFichaTecnicaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFichaTecnicaLayout.createSequentialGroup()
+        pnlProductosOrdenLayout.setVerticalGroup(
+            pnlProductosOrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlProductosOrdenLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblFichaTecnica)
+                .addComponent(lblProductosOrden)
                 .addContainerGap())
         );
 
@@ -480,7 +482,7 @@ public class frmLandingPage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(pnlTintura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlCiudad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnlFichaTecnica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlProductosOrden, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlOrdenTrabajo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlMateriales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -492,7 +494,7 @@ public class frmLandingPage extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlFichaTecnica, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlProductosOrden, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlOrdenTrabajo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -556,15 +558,17 @@ public class frmLandingPage extends javax.swing.JFrame {
         jLabel4.setText("jLabel4");
         jLabel4.setMaximumSize(new java.awt.Dimension(32767, 896));
 
+        pnlContenedor.setBackground(new java.awt.Color(243, 240, 251));
+
         javax.swing.GroupLayout pnlContenedorLayout = new javax.swing.GroupLayout(pnlContenedor);
         pnlContenedor.setLayout(pnlContenedorLayout);
         pnlContenedorLayout.setHorizontalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 859, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         pnlContenedorLayout.setVerticalGroup(
             pnlContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGap(0, 491, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout pnlHeaderLayout = new javax.swing.GroupLayout(pnlHeader);
@@ -572,17 +576,16 @@ public class frmLandingPage extends javax.swing.JFrame {
         pnlHeaderLayout.setHorizontalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlHeaderLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(pnlContenedor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 911, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(pnlHeaderLayout.createSequentialGroup()
-                .addComponent(pnlContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlHeaderLayout.setVerticalGroup(
             pnlHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlHeaderLayout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -679,7 +682,7 @@ public class frmLandingPage extends javax.swing.JFrame {
     private void pnlTinturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTinturaMouseEntered
 
         resetColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
+        resetColor(pnlProductosOrden);
         resetColor(pnlMateriales);
         resetColor(pnlCiudad);
         setColor(pnlTintura);
@@ -707,20 +710,29 @@ public class frmLandingPage extends javax.swing.JFrame {
         setColor(pnlCiudad);
     }//GEN-LAST:event_pnlCiudadMouseEntered
 
-    private void pnlFichaTecnicaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pnlFichaTecnicaMouseClicked
+    private void pnlProductosOrdenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlProductosOrdenMouseClicked
+          setColor(pnlProductosOrden);
 
-    private void pnlFichaTecnicaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFichaTecnicaMouseEntered
+        pnlAddProducto pAddProducto= new pnlAddProducto();
+        pAddProducto.setSize(1000, 600);
+        pAddProducto.setLocation(100, 15);
+
+        pnlContenedor.removeAll();
+        pnlContenedor.add(pAddProducto, BorderLayout.CENTER);
+        pnlContenedor.revalidate();
+        pnlContenedor.repaint();
+    }//GEN-LAST:event_pnlProductosOrdenMouseClicked
+
+    private void pnlProductosOrdenMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlProductosOrdenMouseEntered
         // TODO add your handling code here:
         resetColor(pnlOrdenTrabajo);
-        setColor(pnlFichaTecnica);
+        setColor(pnlProductosOrden);
         resetColor(pnlMateriales);
         resetColor(pnlCiudad);
         resetColor(pnlTintura);
         resetColor(pnlProductos);
         resetColor(pnlFormaPago);
-    }//GEN-LAST:event_pnlFichaTecnicaMouseEntered
+    }//GEN-LAST:event_pnlProductosOrdenMouseEntered
 
     private void pnlOrdenTrabajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseClicked
         // TODO add your handling code here:
@@ -739,7 +751,7 @@ public class frmLandingPage extends javax.swing.JFrame {
 
     private void pnlOrdenTrabajoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOrdenTrabajoMouseEntered
         setColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
+        resetColor(pnlProductosOrden);
         resetColor(pnlMateriales);
         resetColor(pnlCiudad);
         resetColor(pnlTintura);
@@ -762,7 +774,7 @@ public class frmLandingPage extends javax.swing.JFrame {
 
     private void pnlMaterialesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMaterialesMouseEntered
         resetColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
+        resetColor(pnlProductosOrden);
         setColor(pnlMateriales);
         resetColor(pnlCiudad);
         resetColor(pnlTintura);
@@ -787,7 +799,7 @@ public class frmLandingPage extends javax.swing.JFrame {
     private void pnlProductosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlProductosMouseEntered
         // TODO add your handling code here:
         resetColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
+        resetColor(pnlProductosOrden);
         resetColor(pnlMateriales);
         resetColor(pnlCiudad);
         resetColor(pnlTintura);
@@ -797,7 +809,7 @@ public class frmLandingPage extends javax.swing.JFrame {
 
     private void pnlFormaPagoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlFormaPagoMouseClicked
         resetColor(pnlOrdenTrabajo);
-        resetColor(pnlFichaTecnica);
+        resetColor(pnlProductosOrden);
         resetColor(pnlMateriales);
         resetColor(pnlCiudad);
         resetColor(pnlTintura);
@@ -861,7 +873,6 @@ public class frmLandingPage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblCiudad;
     private javax.swing.JLabel lblClose;
-    private javax.swing.JLabel lblFichaTecnica;
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblMateriales;
     private javax.swing.JLabel lblMaximize;
@@ -870,6 +881,7 @@ public class frmLandingPage extends javax.swing.JFrame {
     private javax.swing.JLabel lblOrdenTrabajo;
     private javax.swing.JLabel lblProductos;
     private javax.swing.JLabel lblProductos1;
+    private javax.swing.JLabel lblProductosOrden;
     private javax.swing.JLabel lblTintura;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUser;
@@ -879,13 +891,13 @@ public class frmLandingPage extends javax.swing.JFrame {
     private javax.swing.JPanel pnlCiudad;
     private javax.swing.JPanel pnlContenedor;
     private javax.swing.JPanel pnlDataCards;
-    private javax.swing.JPanel pnlFichaTecnica;
     private javax.swing.JPanel pnlFormaPago;
     private javax.swing.JPanel pnlHeader;
     private javax.swing.JPanel pnlMateriales;
     private javax.swing.JPanel pnlOrdenTrabajo;
     private javax.swing.JPanel pnlParent;
     private javax.swing.JPanel pnlProductos;
+    private javax.swing.JPanel pnlProductosOrden;
     private javax.swing.JPanel pnlRight;
     private javax.swing.JPanel pnlTintura;
     private javax.swing.JPanel pnlTitle;
