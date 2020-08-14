@@ -31,7 +31,7 @@ public class NormaNegocio {
         String respuesta = "Error";
         try {
             
-            if (norma.getCodNorma().isEmpty()) {
+            if (norma.getCodNorma()<=0) {
                 throw new Exception("Error Insertar Norma: El Codigo no debe de ser menor o igual a 0");
 
             }
