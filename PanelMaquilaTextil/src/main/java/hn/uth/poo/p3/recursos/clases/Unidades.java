@@ -5,6 +5,8 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
+import java.util.List;
+
 /**
  *
  * @author maureen
@@ -12,6 +14,7 @@ package hn.uth.poo.p3.recursos.clases;
 public class Unidades  {
     private String Unidad;
     private String Descripcion;
+    public int getUnidades;
 
     public Unidades() {
         super();
@@ -40,6 +43,26 @@ public class Unidades  {
 
     public void setDescripcion(String descripcion) {
         this.Descripcion = descripcion;
+    }
+
+    public void setUnidades(int parseInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Unidades> Buscar(Unidades unidades) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getUnidades() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String Insertar(Unidades unidades) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<Unidades> Leer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

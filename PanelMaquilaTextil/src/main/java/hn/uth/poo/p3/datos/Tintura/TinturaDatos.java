@@ -21,6 +21,30 @@ import java.util.List;
  */
 public class TinturaDatos {
     
+    public static int secuenciaCodTintura() throws SQLException {
+        int cod = 0;
+        try {
+            Connection cn = conexion.ObtenerConexion();
+            Statement st = cn.createStatement();
+            String sql = "SELECT MAX(CODTINTURA) FROM TINTURA";
+            ResultSet rs = st.executeQuery(sql);
+
+            if (rs.next()) {
+                cod = rs.getInt(1);
+                if (rs.wasNull()) {
+                    cod = 0;
+                }
+            }
+            rs.close();
+            cn.close();
+            cod = cod + 1;
+        } catch (SQLException e) {
+            throw new SQLException(e.getMessage());
+        }
+
+        return cod;
+    }
+    
     public static List<Tintura> LeerTintura() throws SQLException {
         List<Tintura> tinturas = new ArrayList<Tintura>();
         try {
@@ -47,6 +71,7 @@ public class TinturaDatos {
 
     public static String InsertarTintura(Tintura tintura) throws SQLException {
         try {
+            int cod = secuenciaCodTintura();
             Connection cn = conexion.ObtenerConexion();
             String sql = "INSERT INTO TINTURA VALUES(?,?)";
             PreparedStatement ps = cn.prepareStatement(sql);

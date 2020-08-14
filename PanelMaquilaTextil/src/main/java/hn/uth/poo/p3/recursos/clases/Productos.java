@@ -5,30 +5,53 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import hn.uth.poo.p3.recursos.clases.Proveedores;
-
 /**
  *
  * @author maureen
  */
-public abstract class Productos implements IProducto{
-   private int CodProducto;
-   private String descProducto;
-   private Proveedores Proveedores;
+public class Productos implements IProducto {
+
+    private int CodProducto;
+    private String NomProducto;
+    private String descProducto;
+    private double precio;
+    private String Ruta;
 
     public Productos() {
         super();
     }
-   
-   
 
-    public Productos(int CodProducto, String descProducto, Proveedores Proveedores) {
+    public Productos(int CodProducto, String NomProducto, String descProducto, double precio, String Ruta) {
         this.CodProducto = CodProducto;
+        this.NomProducto = NomProducto;
         this.descProducto = descProducto;
-        this.Proveedores = Proveedores;
+        this.precio = precio;
+        this.Ruta = Ruta;
     }
-   
-   
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public String getRuta() {
+        return Ruta;
+    }
+
+    public void setRuta(String Ruta) {
+        this.Ruta = Ruta;
+    }
+
+    public String getNomProducto() {
+        return NomProducto;
+    }
+
+    public void setNomProducto(String NomProducto) {
+        this.NomProducto = NomProducto;
+    }
 
     public int getCodProducto() {
         return CodProducto;
@@ -46,13 +69,9 @@ public abstract class Productos implements IProducto{
         this.descProducto = descProducto;
     }
 
-    public Proveedores getProveedores() {
-        return Proveedores;
+    @Override
+    public double CalcularPrecioVenta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setProveedores(Proveedores Proveedores) {
-        this.Proveedores = Proveedores;
-    }
-   
-   
 }

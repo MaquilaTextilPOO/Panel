@@ -5,29 +5,23 @@
  */
 package hn.uth.poo.p3.recursos.clases;
 
-import java.util.Date;
-
 /**
  *
  * @author maureen
  */
-public class Proveedores extends Persona{
+public class Proveedores {
+
     private int CodProveedor;
-    private String TipoProveedor;
+    private String NomProveedor;
 
     public Proveedores() {
         super();
     }
-    
-    
 
-    public Proveedores(int CodProveedor, String TipoProveedor, int CodPersona, String TigoPersona, String Nombre, Date FecCreacion) {
-        super(CodPersona, TigoPersona, Nombre, FecCreacion);
+    public Proveedores(int CodProveedor, String NomProveedor) {
         this.CodProveedor = CodProveedor;
-        this.TipoProveedor = TipoProveedor;
+        this.NomProveedor = NomProveedor;
     }
-    
-    
 
     public int getCodProveedor() {
         return CodProveedor;
@@ -37,13 +31,12 @@ public class Proveedores extends Persona{
         this.CodProveedor = CodProveedor;
     }
 
-    public String getTipoProveedor() {
-        return TipoProveedor;
+    public String getNomProveedor() {
+        return NomProveedor;
     }
 
-    public void setTipoProveedor(String TipoProveedor) {
-        this.TipoProveedor = TipoProveedor;
+    public void setNomProveedor(String NomProveedor) {
+        this.NomProveedor = NomProveedor;
     }
-    
-    
+
 }
